@@ -1,0 +1,28 @@
+:root {
+    --mio-frame1: url("../../assets/prop/mio/mio-1.png");
+    --mio-frame2: url("../../assets/prop/mio/mio-2.png");
+}
+
+#mio {
+    width: 120px;
+    height: 120px;
+    animation-name: mio-animate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    background-repeat: round;
+}
+
+@keyframes mio-animate {
+    0% {
+        background-image: var(--mio-frame1);
+    }
+    49% {
+        background-image: var(--mio-frame1);
+    }
+    50% {
+        background-image: var(--mio-frame2);
+    }
+    100% {
+        background-image: var(--mio-frame2);
+    }
+}

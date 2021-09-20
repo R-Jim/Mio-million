@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-export class anniversary extends Component {
+import AlbumStage from '../components/AlbumStage/AlbumStage';
+import MainStage from '../components/MainStage/MainStage';
+import MessageStage from '../components/MessageStage/MessageStage';
+export class Anniversary extends Component {
     state = {
-        album: null,
-        main: null,
-        message: null,
+        album: <AlbumStage />,
+        main: <MainStage />,
+        message: <MessageStage />,
     }
     render() {
         const { album, main, message } = this.state;
@@ -17,4 +20,4 @@ export class anniversary extends Component {
     }
 }
 
-export default anniversary
+export default Anniversary
