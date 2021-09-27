@@ -1,0 +1,56 @@
+:root {
+    --message-holder-frame1: url("../../assets/prop/fan/fan-1.png");
+    --message-holder-frame2: url("../../assets/prop/fan/fan-2.png");
+}
+
+.message-holder {
+    animation-name: message-holder-animate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes message-holder-animate {
+    0% {
+        transform: none;
+    }
+    49% {
+        transform: none;
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.message-fan-holder {
+    width: 60px;
+    height: 60px;
+    animation-name: message-fan-holder-animate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    background-repeat: round;
+    margin: 0 10px;
+}
+
+@keyframes message-fan-holder-animate {
+    0% {
+        background-image: var(--message-holder-frame1);
+    }
+    49% {
+        background-image: var(--message-holder-frame1);
+    }
+    50% {
+        background-image: var(--message-holder-frame2);
+    }
+    100% {
+        background-image: var(--message-holder-frame2);
+    }
+}
+
+.debug-indicator {
+    position: absolute;
+    color: black;
+    width: 100%;
+    bottom: 2px;
+}
