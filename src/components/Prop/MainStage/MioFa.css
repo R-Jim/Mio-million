@@ -1,9 +1,10 @@
 :root {
-    --message-holder-frame1: url("../../assets/prop/fan/fan-1.png");
-    --message-holder-frame2: url("../../assets/prop/fan/fan-2.png");
+    --message-holder-frame1: url("../../../assets/prop/fan/fan-1.png");
+    --message-holder-frame2: url("../../../assets/prop/fan/fan-2.png");
 }
 
-.message-holder {
+.miofa-container {
+    position: relative;
     animation-name: message-holder-animate;
     animation-iteration-count: infinite;
 }
@@ -23,14 +24,13 @@
     }
 }
 
-.message-fan-holder {
+.miofa {
     width: 60px;
     height: 60px;
     animation-name: message-fan-holder-animate;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-    background-repeat: round;
-    margin: 0 10px;
+    background-size: cover;
 }
 
 @keyframes message-fan-holder-animate {

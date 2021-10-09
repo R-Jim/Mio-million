@@ -1,0 +1,27 @@
+.miofa-with-message {
+    width: 60px;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-container {
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    position: absolute;
+    top: -20px;
+
+    border: 1px solid rgb(230, 37, 37);
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.message-fan-holder {
+    width: 60px;
+    height: 60px;
+}

@@ -1,6 +1,6 @@
 :root {
-    --mio-frame1: url("../../assets/prop/mio/mio-1.png");
-    --mio-frame2: url("../../assets/prop/mio/mio-2.png");
+    --mio-frame1: url("../../../assets/prop/mio/mio-1.png");
+    --mio-frame2: url("../../../assets/prop/mio/mio-2.png");
 }
 
 #mio {
