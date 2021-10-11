@@ -6,12 +6,12 @@ import './LayoutBuilder.css'
 
 export class LayoutBuilder extends Component {
 
-    getDefaultSection = (key, index) => {
+    getDefaultSection = (key) => {
         const dimentions = key.split('x');
         const x = dimentions[0];
         const y = dimentions[1];
         return (
-            <MioFaSection key={index} x={x} y={y} />
+            <MioFaSection x={x} y={y} />
         )
     }
 
@@ -20,16 +20,12 @@ export class LayoutBuilder extends Component {
         if (layout == null) {
             return;
         }
-        const mappedSections = layout.filter(key => key != null).map(
+        return layout.filter(key => key).map(
             (key, index) => {
-                const section = mapping[key];
-                if (section == null) {
-                    return this.getDefaultSection(key, index);
-                }
+                const section = mapping[key] ?? this.getDefaultSection(key);
                 return { ...section, key: index };
             }
         );
-        return mappedSections;
     }
 
     render() {
