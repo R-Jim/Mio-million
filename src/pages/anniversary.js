@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AlbumStage from '../components/AlbumStage/AlbumStage';
 import MioStage from '../components/MioStage/MioStage';
 import MainStage from '../components/MainStage/MainStage';
 
@@ -30,17 +29,15 @@ const test_messages = [
 
 export class Anniversary extends Component {
     state = {
-        album: <AlbumStage />,
         mio: <MioStage />,
         main: <MainStage />,
     }
     render() {
-        const { album, mio: main, main: message } = this.state;
+        const { mio, main } = this.state;
         return (
             <>
-                {album}
+                {mio}
                 {main}
-                {message}
             </>
         )
     }
