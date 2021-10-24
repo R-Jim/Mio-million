@@ -8,7 +8,8 @@ export class MessageSection extends Component {
         const { message = "your_message", name = "name" } = this.props
         return (
             <div className="message-section-container">
-                {/* 3x3 */}
+                {/* 3x4 */}
+                <MioFa />
                 <MioFa />
                 <MioFa />
                 <MioFa />
@@ -17,7 +18,9 @@ export class MessageSection extends Component {
                 <MioFa />
                 <MioFa />
                 <MioFa />
+                <MioFa />
                 <MioFaWithMessage message={name} />
+                <MioFa />
             </div>
         )
     }

@@ -1,7 +1,6 @@
-// import { SECTION_RESOLUTION } from '../Layout/Layout'
 import { SECTION_RESOLUTION } from '../../configs/configs'
 import MessageSection from '../Section/MessageSection'
 
 export default {
-    [SECTION_RESOLUTION._3x3]: <MessageSection />,
+    [SECTION_RESOLUTION._3x4]: <MessageSection />,
 }

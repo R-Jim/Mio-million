@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { RESOLUTION } from '../../configs/configs';
-import { getLayoutForResolution } from '../Layout/Layout'
+import { LAYOUTS } from '../../configs/configs';
 import MioFaSection from '../Section/MioFaSection';
 import './LayoutBuilder.css'
 
@@ -28,11 +27,15 @@ export class LayoutBuilder extends Component {
         );
     }
 
+    getLayout = (layouts) => {
+        const layoutIndex = Math.floor(Math.random() * layouts.length);
+        return layouts[layoutIndex];
+    }
+
     render() {
-        const layout = getLayoutForResolution(RESOLUTION._9x6);
         return (
             <div className="layout-container">
-                {this.getMappedSectionToLayout(layout)}
+                {this.getMappedSectionToLayout(this.getLayout(LAYOUTS))}
             </div>
         )
     }
