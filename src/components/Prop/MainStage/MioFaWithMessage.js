@@ -10,6 +10,7 @@ export class MioFaWithMessage extends Component {
                     {message}
                 </div>
                 <div className="miofa" />
+                <div className="miofa" />
             </div>
         )
     }

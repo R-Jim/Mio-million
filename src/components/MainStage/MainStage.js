@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import MessageLayoutMapping from '../LayoutMapping/MessageLayoutMapping'
-import LayoutBuilder from '../LayoutBuilder/LayoutBuilder'
+import MessageLayoutBuilder from '../LayoutBuilder/MessageLayoutBuilder'
 
 export class MainStage extends Component {
     render() {
         return (
             <div>
-                <LayoutBuilder mapping={MessageLayoutMapping} />
+                <MessageLayoutBuilder mapping={MessageLayoutMapping} />
             </div>
         )
     }

@@ -1,26 +1,26 @@
-.miofa-with-message {
-    width: 120px;
+.miofa-with-name {
+    width: 60px;
     position: relative;
     overflow: visible;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
-.message-container {
-    width: 180px;
-    height: 50px;
+.name-container {
+    width: 90px;
+    height: 20px;
     z-index: 10;
-    left: -40px;
     position: absolute;
-    top: -30px;
+    top: -20px;
     border: 1px solid rgb(230, 37, 37);
     background-color: white;
     color: black;
     padding: 10px;
     font-size: 14px;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.miofa-with-name > .miofa {
+    z-index: 11;
 }

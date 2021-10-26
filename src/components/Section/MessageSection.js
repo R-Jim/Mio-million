@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MioFa from '../Prop/MainStage/MioFa'
 import MioFaWithMessage from '../Prop/MainStage/MioFaWithMessage'
+import MioFaWithName from '../Prop/MainStage/MioFaWithName'
 import './MessageSection.css'
 
 export class MessageSection extends Component {
@@ -18,8 +19,7 @@ export class MessageSection extends Component {
                 <MioFa />
                 <MioFa />
                 <MioFa />
-                <MioFa />
-                <MioFaWithMessage message={name} />
+                <MioFaWithName name={name} />
                 <MioFa />
             </div>
         )

@@ -4,7 +4,6 @@ import MioFaSection from '../Section/MioFaSection';
 import './LayoutBuilder.css'
 
 export class LayoutBuilder extends Component {
-
     getDefaultSection = (key) => {
         const dimentions = key.split('x');
         const x = dimentions[0];
@@ -12,6 +11,10 @@ export class LayoutBuilder extends Component {
         return (
             <MioFaSection x={x} y={y} />
         )
+    }
+
+    getAdditionProperties = () => {
+        return {}
     }
 
     getMappedSectionToLayout = (layout) => {
@@ -22,7 +25,7 @@ export class LayoutBuilder extends Component {
         return layout.filter(key => key).map(
             (key, index) => {
                 const section = mapping[key] ?? this.getDefaultSection(key);
-                return { ...section, key: index };
+                return { ...section, ...this.getAdditionProperties() , key: index };
             }
         );
     }
