@@ -1,24 +1,32 @@
+import { connect } from 'react-redux';
+import { LAYOUTS } from '../../configs/configs';
+import { getCurrentPageMessages } from '../../reducers'
 import LayoutBuilder from './LayoutBuilder'
-import messages from '../../configs/messages'
 
 export class MessageLayoutBuilder extends LayoutBuilder {
-    state = {
-        messages: messages
+    getLayouts = () => {
+        return LAYOUTS
     }
 
-    getMessage = () => {
-        const { messages } = this.state;
-        const item = messages.pop();
-        // this.setState({
-        //     messages
-        // })
-        return item;
-    }
-
-    getAdditionProperties = () => {
-        const { message, name } = this.getMessage() ?? {};
-        return { props: { message, name } }
+    mapSection = (key, index) => {
+        const { mapping, messages } = this.props;
+        let section = mapping[key];
+        if (section) {
+            const { message, name } = messages[index] ?? {};
+            section = { ...section, props: { message, name } };
+        } else {
+            section = this.getDefaultSection(key);
+        }
+        console.log(section)
+        return { ...section, key: index };
     }
 }
 
-export default MessageLayoutBuilder
+function mapStateToProps(state) {
+    return {
+        state,
+        messages: getCurrentPageMessages(state)
+    }
+}
+
+export default connect(mapStateToProps, null)(MessageLayoutBuilder)

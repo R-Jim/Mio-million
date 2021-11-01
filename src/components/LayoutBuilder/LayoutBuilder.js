@@ -13,24 +13,25 @@ export class LayoutBuilder extends Component {
         )
     }
 
-    getAdditionProperties = () => {
-        return {}
+    mapSection = (key, index) => {
+        const { mapping } = this.props;
+        const section = mapping[key] ?? this.getDefaultSection(key);
+        return { ...section, key: index };
     }
 
-    getMappedSectionToLayout = (layout) => {
-        const { mapping } = this.props;
+    getMappedSectionsToLayout = (layout) => {
         if (layout == null) {
             return;
         }
-        return layout.filter(key => key).map(
-            (key, index) => {
-                const section = mapping[key] ?? this.getDefaultSection(key);
-                return { ...section, ...this.getAdditionProperties() , key: index };
-            }
-        );
+        return layout.map(this.mapSection);
     }
 
-    getLayout = (layouts) => {
+    getLayouts = () => {
+        return []
+    }
+
+    getLayout = () => {
+        const layouts = this.getLayouts();
         const layoutIndex = Math.floor(Math.random() * layouts.length);
         return layouts[layoutIndex];
     }
@@ -38,7 +39,7 @@ export class LayoutBuilder extends Component {
     render() {
         return (
             <div className="layout-container">
-                {this.getMappedSectionToLayout(this.getLayout(LAYOUTS))}
+                {this.getMappedSectionsToLayout(this.getLayout())}
             </div>
         )
     }
