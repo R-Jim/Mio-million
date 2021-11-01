@@ -2,7 +2,7 @@
   "name": "Mio-anniversary",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lr-jim.github.io/Mio-anniversary/",
+  "homepage": "https://r-jim.github.io/Mio-anniversary/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.14.1",
