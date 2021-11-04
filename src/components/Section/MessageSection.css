@@ -1,6 +1,6 @@
 .message-section-container {
     display: flex;
     flex-wrap: wrap;
-    width: 240px;
-    height: 180px;
+    width: 280px;
+    height: 210px;
 }

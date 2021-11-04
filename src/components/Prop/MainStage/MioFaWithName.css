@@ -1,5 +1,5 @@
 .miofa-with-name {
-    width: 60px;
+    width: 70px;
     position: relative;
     overflow: visible;
     display: flex;
@@ -12,8 +12,9 @@
     height: 20px;
     z-index: 10;
     position: absolute;
-    top: -10px;
-    border: 1px solid rgb(230, 37, 37);
+    top: -30px;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
     background-color: white;
     color: black;
     padding: 5px;
@@ -22,5 +23,5 @@
 }
 
 .miofa-with-name > .miofa {
-    z-index: 11;
+    z-index: 0;
 }

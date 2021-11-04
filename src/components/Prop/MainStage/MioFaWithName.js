@@ -6,7 +6,9 @@ export class MioFaWithName extends Component {
         const { name } = this.props
         return (
             <div className="miofa-with-name">
-                <div className="miofa" />
+                <div className="miofa-container">
+                    <div className="miofa" />
+                </div>
                 <div className="name-container">
                     {name}
                 </div>

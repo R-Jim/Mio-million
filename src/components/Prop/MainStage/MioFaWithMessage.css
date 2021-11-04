@@ -1,5 +1,6 @@
 .miofa-with-message {
-    width: 120px;
+    width: 140px;
+    margin-top: -30px;
     position: relative;
     overflow: visible;
     display: flex;
@@ -9,12 +10,13 @@
 
 .message-container {
     width: 180px;
-    height: 50px;
+    height: 70px;
     z-index: 10;
-    left: -40px;
+    left: -30px;
     position: absolute;
-    top: -30px;
-    border: 1px solid rgb(230, 37, 37);
+    top: -15px;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
     background-color: white;
     color: black;
     padding: 10px;

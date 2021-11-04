@@ -1,9 +1,11 @@
 :root {
-    --message-holder-frame1: url("../../../assets/prop/fan/fan-1.png");
-    --message-holder-frame2: url("../../../assets/prop/fan/fan-2.png");
+    --miofa-frame1: url("../../../assets/prop/fan/miofa-1.png");
+    --miofa-frame2: url("../../../assets/prop/fan/miofa-2.png");
 }
 
 .miofa-container {
+    margin: -10px;
+    margin-top: -30px;
     position: relative;
     animation-name: message-holder-animate;
     animation-iteration-count: infinite;
@@ -25,8 +27,8 @@
 }
 
 .miofa {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     animation-name: message-fan-holder-animate;
     animation-duration: 1s;
     animation-iteration-count: infinite;
@@ -35,16 +37,16 @@
 
 @keyframes message-fan-holder-animate {
     0% {
-        background-image: var(--message-holder-frame1);
+        background-image: var(--miofa-frame1);
     }
     49% {
-        background-image: var(--message-holder-frame1);
+        background-image: var(--miofa-frame1);
     }
     50% {
-        background-image: var(--message-holder-frame2);
+        background-image: var(--miofa-frame2);
     }
     100% {
-        background-image: var(--message-holder-frame2);
+        background-image: var(--miofa-frame2);
     }
 }
 
@@ -52,5 +54,5 @@
     position: absolute;
     color: black;
     width: 100%;
-    bottom: 2px;
+    bottom: 42px;
 }
