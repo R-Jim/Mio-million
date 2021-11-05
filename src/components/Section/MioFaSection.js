@@ -8,17 +8,18 @@ export class MioFaSection extends Component {
         const cells = [];
         for (let i = 0; i < x * y; i++) {
             cells.push(
-                <MioFa />
+                <MioFa key={i} />
             );
         }
         return cells;
     }
 
     render() {
-        const { x } = this.props;
-        const width = x * 60;
+        const { x, y } = this.props;
+        const height = y * 70;
+        const width = x * 70;
         return (
-            <div className="miofa-container" style={{ width }}>
+            <div className="miofa-section" style={{ width, height }}>
                 {this.renderCells()}
             </div>
         )

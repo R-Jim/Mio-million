@@ -11,13 +11,12 @@ export class MessageLayoutBuilder extends LayoutBuilder {
     mapSection = (key, index) => {
         const { mapping, messages } = this.props;
         let section = mapping[key];
-        if (section) {
-            const { message, name } = messages[index] ?? {};
-            section = { ...section, props: { message, name } };
+        const item = messages[index];
+        if (section && item) {
+            section = { ...section, props: { ...item } };
         } else {
             section = this.getDefaultSection(key);
         }
-        console.log(section)
         return { ...section, key: index };
     }
 }

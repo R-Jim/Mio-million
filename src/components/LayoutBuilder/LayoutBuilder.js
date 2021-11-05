@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { LAYOUTS } from '../../configs/configs';
 import MioFaSection from '../Section/MioFaSection';
 import './LayoutBuilder.css'
 

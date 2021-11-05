@@ -10,8 +10,8 @@ class MessageStageController extends Component {
         const currentItemsLength = current * step + items.slice(current * step, (current + 1) * step).length
         return (
             <div>
-                <button disabled={((current - 1) * step) < 0} onClick={previousPage}>Previous</button>
-                <button disabled={((current + 1) * step) > items.length} onClick={nextPage}>Next</button>
+                <button disabled={((current - 1) * step) < 0} onClick={() => previousPage()}>Previous</button>
+                <button disabled={((current + 1) * step) > items.length} onClick={() => nextPage()}>Next</button>
                 {currentItemsLength}/{items.length}
             </div>
         )
