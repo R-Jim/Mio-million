@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MioFa from './MioFa'
 import './MioFaWithName.css'
 
 export class MioFaWithName extends Component {
@@ -6,9 +7,7 @@ export class MioFaWithName extends Component {
         const { name } = this.props
         return (
             <div className="miofa-with-name">
-                <div className="miofa-container">
-                    <div className="miofa" />
-                </div>
+                <MioFa disablePop={true} />
                 <div className="name-container">
                     {name}
                 </div>

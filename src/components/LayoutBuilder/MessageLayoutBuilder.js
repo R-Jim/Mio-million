@@ -23,7 +23,6 @@ export class MessageLayoutBuilder extends LayoutBuilder {
 
 function mapStateToProps(state) {
     return {
-        state,
         messages: getCurrentPageMessages(state)
     }
 }
