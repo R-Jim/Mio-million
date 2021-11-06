@@ -1,0 +1,13 @@
+export const MESSAGE_SPACING = 5;
+export const NUMBER_OF_TRACK = 4;
+export const TRACK_LENGTH = 10;
+
+export const SECTION_RESOLUTION = {
+    _4x3: "4x3",
+}
+
+export const LAYOUTS = [
+    [
+        SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3
+    ],
+]

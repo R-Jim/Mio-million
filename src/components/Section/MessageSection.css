@@ -1,0 +1,6 @@
+.message-section-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 280px;
+    height: 210px;
+}

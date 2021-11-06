@@ -1,0 +1,27 @@
+.miofa-with-name {
+    width: 70px;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-container {
+    width: 90px;
+    height: 20px;
+    z-index: 10;
+    position: absolute;
+    top: -30px;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.miofa-with-name > .miofa {
+    z-index: 0;
+}
