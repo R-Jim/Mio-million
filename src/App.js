@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Anniversary from './pages/Anniversary';
-import NewMessage from './pages/NewMessage';
+import SendMessage from './pages/SendMessage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="container">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Anniversary />} />
-            <Route path="/submit" element={<NewMessage />} />
+            <Route path="/send-message" element={<SendMessage />} />
           </Routes>
         </BrowserRouter>
-      </header>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MessageSection from '../components/Section/MessageSection'
 
-class NewMessage extends Component {
+class SendMessage extends Component {
     state = {
         message: "Your messages for Mio.",
         name: "- MioFa -",
@@ -38,4 +38,4 @@ class NewMessage extends Component {
     }
 }
 
-export default NewMessage
+export default SendMessage
