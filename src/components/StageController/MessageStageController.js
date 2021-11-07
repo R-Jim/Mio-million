@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getMessagesState, nextPage, previousPage } from '../../reducers'
+import Button from '../Pagnination/Button';
 
 import './MessageStageController.css'
 
@@ -11,12 +12,12 @@ class MessageStageController extends Component {
 
         const currentItemsLength = current * step + items.slice(current * step, (current + 1) * step).length
         return (
-            <div>
-                <div className="pagination-controller">
-                    <button disabled={((current - 1) * step) < 0} onClick={() => previousPage()}>Previous</button>
-                    <button disabled={((current + 1) * step) > items.length} onClick={() => nextPage()}>Next</button>
+            <div className="pagination-controller">
+                <Button className="previous" disabled={((current - 1) * step) < 0} onClick={() => previousPage()} />
+                <div className="total-display">
+                    {currentItemsLength}/{items.length}
                 </div>
-                {currentItemsLength}/{items.length}
+                <Button className="next" disabled={((current + 1) * step) > items.length} onClick={() => nextPage()} />
             </div>
         )
     }
