@@ -4,10 +4,10 @@ import './MioFaWithName.css'
 
 export class MioFaWithName extends Component {
     render() {
-        const { name } = this.props
+        const { name, isPreview } = this.props
         return (
             <div className="miofa-with-name">
-                <MioFa disablePop={true} />
+                <MioFa disablePop={true} isPreview={isPreview} />
                 <div className="name-container">
                     {name}
                 </div>

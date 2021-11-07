@@ -27,6 +27,10 @@ export class MioFa extends Component {
     }
 
     shouldComponentUpdate = (nextProps) => {
+        if (this.props.isPreview) {
+            return false;
+        }
+
         if (nextProps !== this.props) {
             this.setState({ isDespawn: true })
             this.updateTimeOut = setTimeout(
@@ -43,7 +47,7 @@ export class MioFa extends Component {
 
     render() {
         const { popTime, isDespawn } = this.state;
-        
+
         const spawnTime = isDespawn ? this.getSpawnTime() * 2 : this.getSpawnTime();
         const animationName = isDespawn ? "miofa-despawn" : "miofa-spawn, miofa-animate";
         const animationConfig = {
