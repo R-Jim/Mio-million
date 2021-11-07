@@ -1,3 +1,12 @@
 .pagination-controller {
-    margin: 10px;
+    margin: 10px 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.total-display {
+    min-width: 100px;
+    padding: 0 10px;
+    line-height: 55px;
 }
