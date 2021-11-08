@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
+import Form from '../components/Form/Form'
+import Input from '../components/Form/Input'
+import Button from '../components/Navigation/Button'
 import MessageSection from '../components/Section/MessageSection'
+import './SendMessage.css'
 
 class SendMessage extends Component {
     state = {
@@ -20,19 +24,17 @@ class SendMessage extends Component {
 
     render() {
         return (
-            <div>
-                {this.renderPreviewMessageSection()}
-                <form>
-                    <label>
-                        Name:
-                        <input type="text" name="name" onChange={this.handleChange} placeholder="- MioFa -" />
-                    </label>
-                    <label>
-                        Message:
-                        <input type="text" name="message" onChange={this.handleChange} placeholder="Your messages for Mio." />
-                    </label>
+            <div className="send-message-container">
+                <div className="preview-container">
+                    {this.renderPreviewMessageSection()}
+                </div>
+                <Form>
+                    <Input type="text" title="Email" name="email" onChange={this.handleChange} placeholder="example@gmail.com" />
+                    <Input type="text" title="Name" name="name" onChange={this.handleChange} placeholder="Name (10 characters max)" maxlength="10" />
+                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} placeholder="Your messages for Mio. (100 characters max)" rows="4" maxlength="100" />
                     <input type="submit" value="Submit" />
-                </form>
+                </Form>
+                <Button link="/" text="Back to main" />
             </div>
         )
     }

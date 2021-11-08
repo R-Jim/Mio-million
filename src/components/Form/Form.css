@@ -1,0 +1,20 @@
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: fit-content;
+    padding-left: 120px;
+    margin-right: -90px !important;
+}
+
+.form-container .input {
+    width: 100%;
+    margin-left: -30%;
+    margin-right: 30%;
+}
+
+.form-container input, .form-container textarea {
+    margin: 5px 0;
+}
+
+.form-container span {}

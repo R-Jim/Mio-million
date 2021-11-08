@@ -1,0 +1,14 @@
+.input {}
+
+.input span {
+    float: right;
+    line-height: 41px;
+}
+
+.input input, .input textarea {
+    float: right;
+    margin-left: 10px;
+    width: calc(70% - 18px);
+    padding: 8px;
+    border-radius: 8px;
+}
