@@ -1,0 +1,32 @@
+.pagination-button {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-repeat: round;
+}
+
+.pagination-button:hover:not(.disabled) {
+    margin-top: 2px;
+    height: 58px;
+}
+
+.pagination-button.disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.pagination-button.next {
+    background-image: url("../../assets/pagination/right-off.png");
+}
+
+.pagination-button.next:hover:not(.disabled) {
+    background-image: url("../../assets/pagination/right-on.png");
+}
+
+.pagination-button.previous {
+    background-image: url("../../assets/pagination/left-off.png");
+}
+
+.pagination-button.previous:hover:not(.disabled) {
+    background-image: url("../../assets/pagination/left-on.png");
+}

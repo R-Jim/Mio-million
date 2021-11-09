@@ -10,15 +10,16 @@
     animation-iteration-count: infinite;
     background-repeat: round;
     background-image: var(--mio-frame);
-    margin: 20px 0;
+    margin: 20px 50%;
+    position: absolute;
+    bottom: 0;
+    margin-left: calc(50% - 60px);
 }
 
 @keyframes mio-animate {
-    48% {
+    48% {}
+    50% {
+        transform: translateY(-15px);
     }
-    50%{
-        transform: translateY(15px);
-    }
-    52% {
-    }
+    52% {}
 }
