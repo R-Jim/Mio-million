@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "./static/css/main.018ad889.chunk.css",
-    "main.js": "./static/js/main.0524ce0c.chunk.js",
-    "main.js.map": "./static/js/main.0524ce0c.chunk.js.map",
+    "main.js": "./static/js/main.e26dfee6.chunk.js",
+    "main.js.map": "./static/js/main.e26dfee6.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.adff3005.js",
     "runtime-main.js.map": "./static/js/runtime-main.adff3005.js.map",
-    "static/js/2.a2c16692.chunk.js": "./static/js/2.a2c16692.chunk.js",
-    "static/js/2.a2c16692.chunk.js.map": "./static/js/2.a2c16692.chunk.js.map",
+    "static/js/2.709871e2.chunk.js": "./static/js/2.709871e2.chunk.js",
+    "static/js/2.709871e2.chunk.js.map": "./static/js/2.709871e2.chunk.js.map",
     "static/js/3.6854b81a.chunk.js": "./static/js/3.6854b81a.chunk.js",
     "static/js/3.6854b81a.chunk.js.map": "./static/js/3.6854b81a.chunk.js.map",
     "index.html": "./index.html",
     "static/css/main.018ad889.chunk.css.map": "./static/css/main.018ad889.chunk.css.map",
-    "static/js/2.a2c16692.chunk.js.LICENSE.txt": "./static/js/2.a2c16692.chunk.js.LICENSE.txt",
+    "static/js/2.709871e2.chunk.js.LICENSE.txt": "./static/js/2.709871e2.chunk.js.LICENSE.txt",
     "static/media/Mio.css": "./static/media/mio.d2fb0f3e.png",
     "static/media/MioFa.css": "./static/media/miofa-2.7589dd4e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.adff3005.js",
-    "static/js/2.a2c16692.chunk.js",
+    "static/js/2.709871e2.chunk.js",
     "static/css/main.018ad889.chunk.css",
-    "static/js/main.0524ce0c.chunk.js"
+    "static/js/main.e26dfee6.chunk.js"
   ]
 }
