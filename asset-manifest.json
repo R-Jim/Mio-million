@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.018ad889.chunk.css",
-    "main.js": "./static/js/main.d343d1cf.chunk.js",
-    "main.js.map": "./static/js/main.d343d1cf.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.adff3005.js",
-    "runtime-main.js.map": "./static/js/runtime-main.adff3005.js.map",
-    "static/js/2.a2c16692.chunk.js": "./static/js/2.a2c16692.chunk.js",
-    "static/js/2.a2c16692.chunk.js.map": "./static/js/2.a2c16692.chunk.js.map",
-    "static/js/3.6854b81a.chunk.js": "./static/js/3.6854b81a.chunk.js",
-    "static/js/3.6854b81a.chunk.js.map": "./static/js/3.6854b81a.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/main.018ad889.chunk.css.map": "./static/css/main.018ad889.chunk.css.map",
-    "static/js/2.a2c16692.chunk.js.LICENSE.txt": "./static/js/2.a2c16692.chunk.js.LICENSE.txt",
-    "static/media/Mio.css": "./static/media/mio.d2fb0f3e.png",
-    "static/media/MioFa.css": "./static/media/miofa-2.7589dd4e.png"
+    "main.css": "/Mio-anniversary/static/css/main.596a42f5.chunk.css",
+    "main.js": "/Mio-anniversary/static/js/main.556a10c2.chunk.js",
+    "main.js.map": "/Mio-anniversary/static/js/main.556a10c2.chunk.js.map",
+    "runtime-main.js": "/Mio-anniversary/static/js/runtime-main.f7bda07e.js",
+    "runtime-main.js.map": "/Mio-anniversary/static/js/runtime-main.f7bda07e.js.map",
+    "static/js/2.a2c16692.chunk.js": "/Mio-anniversary/static/js/2.a2c16692.chunk.js",
+    "static/js/2.a2c16692.chunk.js.map": "/Mio-anniversary/static/js/2.a2c16692.chunk.js.map",
+    "static/js/3.6854b81a.chunk.js": "/Mio-anniversary/static/js/3.6854b81a.chunk.js",
+    "static/js/3.6854b81a.chunk.js.map": "/Mio-anniversary/static/js/3.6854b81a.chunk.js.map",
+    "index.html": "/Mio-anniversary/index.html",
+    "static/css/main.596a42f5.chunk.css.map": "/Mio-anniversary/static/css/main.596a42f5.chunk.css.map",
+    "static/js/2.a2c16692.chunk.js.LICENSE.txt": "/Mio-anniversary/static/js/2.a2c16692.chunk.js.LICENSE.txt",
+    "static/media/Mio.css": "/Mio-anniversary/static/media/mio.d2fb0f3e.png",
+    "static/media/MioFa.css": "/Mio-anniversary/static/media/miofa-2.7589dd4e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.adff3005.js",
+    "static/js/runtime-main.f7bda07e.js",
     "static/js/2.a2c16692.chunk.js",
-    "static/css/main.018ad889.chunk.css",
-    "static/js/main.d343d1cf.chunk.js"
+    "static/css/main.596a42f5.chunk.css",
+    "static/js/main.556a10c2.chunk.js"
   ]
 }
