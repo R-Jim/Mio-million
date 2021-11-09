@@ -1,8 +1,8 @@
 {
   "name": "Mio-anniversary",
-  "version": "0.1.0-ALPHA",
+  "version": "0.2.0-ALPHA",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://anniv3.miosha.moe/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.14.1",

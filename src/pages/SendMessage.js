@@ -30,8 +30,8 @@ class SendMessage extends Component {
                 </div>
                 <Form>
                     <Input type="text" title="Email" name="email" onChange={this.handleChange} placeholder="example@gmail.com" />
-                    <Input type="text" title="Name" name="name" onChange={this.handleChange} placeholder="Name (10 characters max)" maxlength="10" />
-                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} placeholder="Your messages for Mio. (100 characters max)" rows="4" maxlength="100" />
+                    <Input type="text" title="Name" name="name" onChange={this.handleChange} placeholder="Name (10 characters max)" maxLength="10" />
+                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} placeholder="Your messages for Mio. (100 characters max)" rows="4" maxLength="100" />
                     <input type="submit" value="Submit" />
                 </Form>
                 <Button link="/" text="Back to main" />
