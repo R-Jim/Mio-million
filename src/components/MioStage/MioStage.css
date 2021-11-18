@@ -3,6 +3,9 @@
     height: 350px;
     position: relative;
     background-color: #fff;
+    background-image: url("../../assets/stages/mio/banner.png");
+    background-repeat: no-repeat;
+    background-position: center;
     border: 2px solid green;
     box-sizing: border-box;
     color: black;
