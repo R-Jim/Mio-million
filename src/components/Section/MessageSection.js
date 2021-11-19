@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MioFa from '../Prop/MainStage/MioFa'
 import MioFaWithMessage from '../Prop/MainStage/MioFaWithMessage'
 import MioFaWithName from '../Prop/MainStage/MioFaWithName'
+import MyMioFa from '../Prop/MainStage/MyMioFa'
 import './MessageSection.css'
 
 export class MessageSection extends Component {
@@ -15,13 +16,14 @@ export class MessageSection extends Component {
     }
 
     render() {
-        const { message = "your_message", name = "name", isPreview } = this.props
+        const { message = "your_message", name = "name", frames = [], isPreview } = this.props
         return (
             <div className="message-section-container">
                 {/* 3x4 */}
                 {this.renderMioFas(5)}
                 <MioFaWithMessage message={message} isPreview={isPreview} />
-                {this.renderMioFas(3)}
+                {this.renderMioFas(2)}
+                <MyMioFa frames={frames} />
                 <MioFaWithName name={name} isPreview={isPreview} />
                 {this.renderMioFas(1)}
             </div>
