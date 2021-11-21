@@ -19,7 +19,6 @@
 
 .send-message-container .form-container {
     width: 340px;
-    margin: auto 0;
 }
 
 @media (max-width: 712px) {

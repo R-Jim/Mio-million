@@ -1,0 +1,35 @@
+.multiple-input input {
+    width: calc(100% - 63px);
+    margin-left: 0;
+}
+
+.multiple-input .action {
+    height: 33px;
+    width: 33px;
+    margin: 6px 0;
+    margin-left: 10px;
+    float: right;
+    border: 2px solid white;
+    border-radius: 8px;
+    display: flex;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.multiple-input .action:hover {
+    cursor: pointer;
+}
+
+.multiple-input .action.hidden {
+    cursor: unset;
+    opacity: 0;
+}
+
+
+.input-container {
+    width: 70%;
+    float: right;
+    margin-left: 10px;
+}
