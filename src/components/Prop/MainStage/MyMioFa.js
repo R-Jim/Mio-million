@@ -4,8 +4,8 @@ import MioFa1 from '../../../assets/prop/fan/miofa-1.png'
 import MioFa2 from '../../../assets/prop/fan/miofa-2.png'
 
 const defaultFrames = [
-    "url('" + MioFa1 + "')",
-    "url('" + MioFa2 + "')"
+    MioFa1,
+    MioFa2
 ]
 
 class MyMioFa extends Component {
@@ -20,12 +20,26 @@ class MyMioFa extends Component {
         this.setState(this.getDefautState());
     }
 
+    isFramesChange = (nextProps) => {
+        const { frames } = this.props;
+        const { frames: nextFrames } = nextProps;
+        if (nextFrames.length != frames.length) {
+            return true;
+        }
+        nextFrames.forEach((url, index) => {
+            if (frames[index] != url) {
+                return true;
+            }
+        });
+        return false;
+    }
+
     shouldComponentUpdate = (nextProps) => {
         if (this.props.isPreview) {
             return false;
         }
 
-        if (nextProps !== this.props) {
+        if (this.isFramesChange(nextProps)) {
             this.setState({ isDespawn: true })
             this.updateTimeOut = setTimeout(
                 this.resetState.bind(this)
@@ -85,8 +99,7 @@ class MyMioFa extends Component {
 
         return (
             <div className="my-miofa-container" style={animationConfig} onLoad={this.check}>
-                <div className="debug-indicator">M</div>
-                <div className="miofa my-miofa" style={{ backgroundImage: frame }} />
+                <img src={frame} width="90" height="90" />
             </div>
         )
     }

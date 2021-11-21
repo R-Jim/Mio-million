@@ -16,7 +16,7 @@ export class MessageSection extends Component {
     }
 
     render() {
-        const { message = "your_message", name = "name", frames = [], isPreview } = this.props
+        const { message = "Your messages for Mio.", name = "- MioFa -", frames = [], isPreview } = this.props
         return (
             <div className="message-section-container">
                 {/* 3x4 */}

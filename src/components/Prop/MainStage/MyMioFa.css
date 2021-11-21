@@ -5,6 +5,8 @@
     animation-timing-function: linear;
 }
 
-.my-miofa {
-    animation: none;
+
+.my-miofa-container img {
+    background-image: url("/src/assets/prop/fan/miofa-error.png");
+    background-repeat: round;
 }
