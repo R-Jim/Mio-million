@@ -57,6 +57,7 @@ class SendMessage extends Component {
         const { form: { email, message, name, myMioFa } } = this.state;
         return (
             <div className="send-message-container">
+                <div className="mimic pagination-controller" />
                 <div className="preview-container">
                     {this.renderPreviewMessageSection()}
                 </div>

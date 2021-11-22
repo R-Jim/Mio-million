@@ -3,11 +3,11 @@
 }
 
 .container {
-  background-color: #282c34;
-  min-height: calc(100vh - 20px);
+  background-color: #324058;
+  min-height: calc(100vh - 10px);
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  padding: 10px 0;
+  padding-top: 10px;
 }

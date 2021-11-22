@@ -7,7 +7,6 @@ export class MioStage extends Component {
         return (
             <div className="mio-stage">
                 <Mio />
-                Le* Banner
             </div>
         )
     }
