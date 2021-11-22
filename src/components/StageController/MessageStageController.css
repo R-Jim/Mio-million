@@ -1,8 +1,9 @@
 .pagination-controller {
-    margin: 10px 0;
     display: flex;
     width: 100%;
     justify-content: center;
+    background-color: #17202e;
+    padding: 15px 0;
 }
 
 .total-display {

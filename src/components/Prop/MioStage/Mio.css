@@ -12,7 +12,7 @@
     background-image: var(--mio-frame);
     margin: 20px 50%;
     position: absolute;
-    bottom: 40px;
+    bottom: 5px;
     margin-left: calc(50% - 60px);
 }
 

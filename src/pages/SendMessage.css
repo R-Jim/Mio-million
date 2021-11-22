@@ -1,7 +1,6 @@
 .send-message-container {
     display: flex;
     justify-content: center;
-    margin: 30px 0;
     width: 100%;
     overflow: hidden;
     flex-wrap: wrap;
@@ -19,6 +18,11 @@
 
 .send-message-container .form-container {
     width: 340px;
+}
+
+.mimic {
+    height: 60px;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 712px) {
