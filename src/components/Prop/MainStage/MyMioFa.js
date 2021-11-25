@@ -23,11 +23,11 @@ class MyMioFa extends Component {
     isFramesChange = (nextProps) => {
         const { frames } = this.props;
         const { frames: nextFrames } = nextProps;
-        if (nextFrames.length != frames.length) {
+        if (nextFrames.length !== frames.length) {
             return true;
         }
         nextFrames.forEach((url, index) => {
-            if (frames[index] != url) {
+            if (frames[index] !== url) {
                 return true;
             }
         });
@@ -56,13 +56,13 @@ class MyMioFa extends Component {
 
     getFrames = () => {
         let { frames = [] } = this.props;
-        if (frames.length == 0) {
+        if (frames.length === 0) {
             return defaultFrames;
         }
         return frames;
     }
 
-    getFrameIndex = () => {
+    getNextFrameIndex = () => {
         const frames = this.getFrames();
 
         let { currentIndex } = this.state;
@@ -74,9 +74,9 @@ class MyMioFa extends Component {
     }
 
     updateIndex = () => {
-        const currentIndex = this.getFrameIndex();
+        const nextIndex = this.getNextFrameIndex();
         this.setState({
-            currentIndex
+            currentIndex: nextIndex
         })
     }
 
@@ -86,9 +86,21 @@ class MyMioFa extends Component {
         )
     }
 
+
+    renderFrames = () => {
+        const { currentIndex } = this.state;
+        const frames = this.getFrames()
+        return (
+            <div>
+                {frames.map((frame, index) =>
+                    <img key={index} src={frame} width={currentIndex === index ? "90" : "0"} height="90" />
+                )}
+            </div>
+        )
+    }
+
     render() {
-        const { isDespawn, currentIndex } = this.state;
-        const frame = this.getFrames()[currentIndex]
+        const { isDespawn } = this.state;
 
         const animationName = isDespawn ? "miofa-despawn" : "miofa-spawn";
         const animationConfig = {
@@ -99,7 +111,7 @@ class MyMioFa extends Component {
 
         return (
             <div className="my-miofa-container" style={animationConfig} onLoad={this.check}>
-                <img src={frame} width="90" height="90" />
+                {this.renderFrames()}
             </div>
         )
     }
