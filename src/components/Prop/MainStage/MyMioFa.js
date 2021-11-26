@@ -93,7 +93,7 @@ class MyMioFa extends Component {
         return (
             <div>
                 {frames.map((frame, index) =>
-                    <img key={index} src={frame} width={currentIndex === index ? "90" : "0"} height="90" />
+                    <img key={index} src={frame} width={currentIndex === index ? "90" : "0"} height="90" alt="" />
                 )}
             </div>
         )
