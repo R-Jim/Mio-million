@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MioFaSection from '../Section/MioFaSection';
 import './LayoutBuilder.css'
 
-export class LayoutBuilder extends Component {
+class LayoutBuilder extends Component {
     getDefaultSection = (key) => {
         const dimentions = key.split('x');
         const x = dimentions[0];

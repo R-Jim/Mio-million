@@ -44,7 +44,7 @@ class MultipleInput extends Component {
             return <div key={index} className="action" onClick={() => this.handeRemoveItem(name)}>-</div>
         }
         const { numberOfItem } = this.state;
-        const isAtLimit = numberOfItem == this.getLimit();
+        const isAtLimit = numberOfItem === this.getLimit();
         return <div key={index} name={name} className={"action" + (isAtLimit ? " hidden" : " ")} onClick={isAtLimit ? null : this.handeAddItem}>+</div>
     }
 

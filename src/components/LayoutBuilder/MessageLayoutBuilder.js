@@ -3,7 +3,7 @@ import { LAYOUTS } from '../../configs/configs';
 import { getCurrentPageMessages } from '../../reducers'
 import LayoutBuilder from './LayoutBuilder'
 
-export class MessageLayoutBuilder extends LayoutBuilder {
+class MessageLayoutBuilder extends LayoutBuilder {
     getLayouts = () => {
         return LAYOUTS
     }
