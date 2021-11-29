@@ -1,23 +1,32 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getMessagesState, nextPage, previousPage } from '../../reducers'
+import { getMessagesState, nextPage, previousPage, fetchMessages } from '../../reducers/stage'
 import Button from '../Pagnination/Button';
 
 import './MessageStageController.css'
 
 class MessageStageController extends Component {
+    nextPageHandler = () => {
+        const { nextPage, fetchMessages } = this.props;
+        const { configState: { current, items, pageSize } } = this.props;
+        const nextIndex = current + 1;
+        if (items.length < nextIndex * pageSize) {
+            fetchMessages({ page: nextIndex, pageSize: pageSize })
+        }
+        nextPage()
+    }
+    
     render() {
-        const { nextPage, previousPage } = this.props;
-        const { configState: { items, step, current } } = this.props;
+        const { previousPage } = this.props;
+        const { configState: { current, pageCount } } = this.props;
 
-        const currentItemsLength = current * step + items.slice(current * step, (current + 1) * step).length
         return (
             <div className="pagination-controller">
-                <Button className="previous" disabled={((current - 1) * step) < 0} onClick={() => previousPage()} />
+                <Button className="previous" disabled={current === 1} onClick={() => previousPage()} />
                 <div className="total-display">
-                    {currentItemsLength}/{items.length}
+                    {current}/{pageCount}
                 </div>
-                <Button className="next" disabled={((current + 1) * step) > items.length} onClick={() => nextPage()} />
+                <Button className="next" disabled={current >= pageCount} onClick={() => this.nextPageHandler()} />
             </div>
         )
     }
@@ -30,6 +39,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
     nextPage,
     previousPage,
+    fetchMessages,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageStageController)

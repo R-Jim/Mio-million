@@ -1,9 +1,23 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Form from '../components/Form/Form'
 import Input from '../components/Form/Input'
 import Button from '../components/Navigation/Button'
 import MessageSection from '../components/Section/MessageSection'
+import { sendMessages } from '../reducers/form'
 import './SendMessage.css'
+
+// const test_form = {
+//     email: "test_mail@gmail.com",
+//     message: "This is a test message",
+//     name: "test_user1",
+//     myMioFa: {
+//         frames: [
+//             "https://cdn.discordapp.com/attachments/551602365162061834/914877887633571840/1.png",
+//             "https://cdn.discordapp.com/attachments/551602365162061834/914877886996049940/2.png",
+//         ],
+//     }
+// }
 
 const form = {
     email: undefined,
@@ -17,6 +31,7 @@ const form = {
 class SendMessage extends Component {
     state = {
         form,
+        // form: test_form,
     }
 
     renderPreviewMessageSection = () => {
@@ -53,6 +68,12 @@ class SendMessage extends Component {
         })
     }
 
+    submitForm = () => {
+        const { sendMessages } = this.props;
+        const { form: { email, name, message, myMioFa } } = this.state;
+        sendMessages({ email, name, message, frames: myMioFa.frames });
+    }
+
     render() {
         const { form: { email, message, name, myMioFa } } = this.state;
         return (
@@ -66,7 +87,7 @@ class SendMessage extends Component {
                     <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (10 characters max)" maxLength="10" />
                     <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (100 characters max)" rows="4" maxLength="100" />
                     <Input type="multi" title="Your MioFa" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="URL" limit={2} />
-                    <input type="submit" value="Submit" />
+                    <input type="button" value="Submit" onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />
                 </Form>
                 <Button link="/" text="Back to main" />
@@ -75,4 +96,9 @@ class SendMessage extends Component {
     }
 }
 
-export default SendMessage
+
+const mapDispatchToProps = {
+    sendMessages,
+}
+
+export default connect(null, mapDispatchToProps)(SendMessage)
