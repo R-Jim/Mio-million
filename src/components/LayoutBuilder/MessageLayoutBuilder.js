@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { LAYOUTS } from '../../configs/configs';
-import { getCurrentPageMessages } from '../../reducers'
+import { getCurrentPageMessages } from '../../reducers/stage'
 import LayoutBuilder from './LayoutBuilder'
 
 class MessageLayoutBuilder extends LayoutBuilder {
