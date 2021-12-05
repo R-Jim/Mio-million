@@ -4,6 +4,7 @@
     width: 100%;
     overflow: hidden;
     flex-wrap: wrap;
+    color: white;
 }
 
 .preview-container {

@@ -1,0 +1,26 @@
+:root {
+    --notify-mio-frame: url("../../../assets/prop/welcome/mio-notify.png");
+    --box-mio-frame1: url("../../../assets/prop/welcome/mio-box.png");
+    --box-mio-frame2: url("../../../assets/prop/welcome/mio-box-peek.png");
+}
+.ready-mio {
+    width: 200px;
+    height: 180px;
+    background-image: var(--box-mio-frame1);
+    animation: notify-mio-animate 1s linear 1;
+    background-size: cover;    
+}
+
+.ready-mio:hover {
+    background-image: var(--box-mio-frame2);
+    cursor: pointer;
+}
+
+@keyframes notify-mio-animate {
+    0% {
+        background-image: var(--notify-mio-frame);
+    }
+    100% {
+        background-image: var(--notify-mio-frame);
+    }
+}

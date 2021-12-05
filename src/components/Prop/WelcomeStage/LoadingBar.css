@@ -1,0 +1,64 @@
+.loading-container {
+    width: 200px;
+    height: 20px;
+    border: 1px solid silver;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    animation:  end-progress-animate 1s linear 1 6s, hidden-animate 10s linear infinite 7s;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 20px;
+    background-image: url("../../../assets/prop/welcome/loading.png");
+    animation: loading-animate 10s linear infinite, progress-animate 5s linear 1;
+}
+
+
+@keyframes loading-animate {
+    100% {
+        background-position-x: 400px;
+    }
+}
+
+@keyframes progress-animate {
+    0% {
+        width: 0%;
+    }
+
+    30% {
+        width: 20%;
+    }
+
+    50% {
+        width: 60%;
+    }
+
+    70% {
+        width: 70%;
+    }
+
+    80% {
+        width: 90%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes end-progress-animate {
+    100% {
+        height: 0;
+    }
+}
+
+@keyframes hidden-animate {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 0;
+    }
+}

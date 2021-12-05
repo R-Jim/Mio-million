@@ -5,8 +5,10 @@ import './MioStage.css'
 export class MioStage extends Component {
     render() {
         return (
-            <div className="mio-stage">
-                <Mio />
+            <div className="mio-stage-backdrop">
+                <div className="mio-stage">
+                    <Mio />
+                </div>
             </div>
         )
     }
