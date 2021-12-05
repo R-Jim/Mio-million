@@ -1,8 +1,14 @@
+.mio-stage-backdrop {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    background-image: url("../../assets/stages/mio/background.jpg");
+}
+
 .mio-stage {
     width: 100%;
     height: 350px;
     position: relative;
-    background-color: #324058;
     background-image: url("../../assets/stages/mio/banner.png");
     background-repeat: no-repeat;
     background-position: center;

@@ -1,0 +1,26 @@
+:root {
+    --loading-mio-frame1: url("../../../assets/prop/welcome/mio-sleep-1.png");
+    --loading-mio-frame2: url("../../../assets/prop/welcome/mio-sleep-2.png");
+}
+.loading-mio {
+    width: 200px;
+    height: 180px;
+
+    animation: loading-mio-animate 2s ease-in infinite;
+    background-size: cover;    
+}
+
+@keyframes loading-mio-animate {
+    0% {
+        background-image: var(--loading-mio-frame1);
+    }
+    49% {
+        background-image: var(--loading-mio-frame1);
+    }
+    50% {
+        background-image: var(--loading-mio-frame2);
+    }
+    100% {
+        background-image: var(--loading-mio-frame2);
+    }
+}
