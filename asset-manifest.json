@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4879843a.chunk.css",
-    "main.js": "/static/js/main.bd6587bc.chunk.js",
-    "main.js.map": "/static/js/main.bd6587bc.chunk.js.map",
+    "main.js": "/static/js/main.f3cf5227.chunk.js",
+    "main.js.map": "/static/js/main.f3cf5227.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8365975d.js",
     "runtime-main.js.map": "/static/js/runtime-main.8365975d.js.map",
-    "static/js/2.74efde60.chunk.js": "/static/js/2.74efde60.chunk.js",
-    "static/js/2.74efde60.chunk.js.map": "/static/js/2.74efde60.chunk.js.map",
+    "static/js/2.4dafd764.chunk.js": "/static/js/2.4dafd764.chunk.js",
+    "static/js/2.4dafd764.chunk.js.map": "/static/js/2.4dafd764.chunk.js.map",
     "static/js/3.880e7e59.chunk.js": "/static/js/3.880e7e59.chunk.js",
     "static/js/3.880e7e59.chunk.js.map": "/static/js/3.880e7e59.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.4879843a.chunk.css.map": "/static/css/main.4879843a.chunk.css.map",
-    "static/js/2.74efde60.chunk.js.LICENSE.txt": "/static/js/2.74efde60.chunk.js.LICENSE.txt",
+    "static/js/2.4dafd764.chunk.js.LICENSE.txt": "/static/js/2.4dafd764.chunk.js.LICENSE.txt",
     "static/media/MioStage.css": "/static/media/banner.60560af5.png",
     "static/media/ReadyMio.css": "/static/media/mio-notify.c86bac24.png",
     "static/media/LoadingMio.css": "/static/media/mio-sleep-2.ac678feb.png",
@@ -21,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8365975d.js",
-    "static/js/2.74efde60.chunk.js",
+    "static/js/2.4dafd764.chunk.js",
     "static/css/main.4879843a.chunk.css",
-    "static/js/main.bd6587bc.chunk.js"
+    "static/js/main.f3cf5227.chunk.js"
   ]
 }
