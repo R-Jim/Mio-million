@@ -1,6 +1,6 @@
 :root {
-    --miofa-frame1: url("../../../assets/prop/fan/miofa-1.png");
-    --miofa-frame2: url("../../../assets/prop/fan/miofa-2.png");
+    --miofa-frame1: url("../../../assets/prop/fan/MiochunRig.png");
+    --miofa-frame2: url("../../../assets/prop/fan/MiochunRig2.png");
 }
 
 .miofa-container {
@@ -49,7 +49,9 @@
     animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
-    background-size: cover;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 @keyframes message-fan-holder-animate {

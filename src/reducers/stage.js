@@ -17,6 +17,7 @@ const stageSlice = createSlice({
         items: [],
         status: 'idle',
         error: "",
+        isReady: false,
     },
     reducers: {
         nextPage: (state) => {
@@ -25,6 +26,9 @@ const stageSlice = createSlice({
         previousPage: (state) => {
             state.current -= 1
         },
+        readyPage: (state) => {
+            state.isReady = true
+        }
     },
     extraReducers(builder) {
         builder
@@ -45,7 +49,7 @@ const stageSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { nextPage, previousPage } = stageSlice.actions
+export const { nextPage, previousPage, readyPage } = stageSlice.actions
 
 
 export const getCurrentPageMessages = ({ messages: { items, current, pageSize } }) => items.slice(current - 1 * pageSize, current * pageSize)

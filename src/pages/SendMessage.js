@@ -102,6 +102,7 @@ class SendMessage extends Component {
             <div className="send-message-container">
                 <div className="mimic pagination-controller" />
                 <div className="preview-container">
+                    <span>Preview</span>
                     {this.renderPreviewMessageSection()}
                 </div>
                 <Form>
@@ -112,7 +113,7 @@ class SendMessage extends Component {
                     <input type="button" value="Submit" onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />
                 </Form>
-                <Button link="/" text="Back to main" />
+                <Button link="/" text="To Stage" />
             </div>
         )
     }

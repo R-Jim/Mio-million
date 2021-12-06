@@ -14,7 +14,18 @@
     display: flex;
     justify-content: center;
     border: 2px solid;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 10px;
+    position: relative;
+}
+
+.preview-container span {
+    position: absolute;
+    left: -2px;
+    top: -22px;
+    padding: 0 10px;
+    background-color: white;
+    color: black;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .send-message-container .form-container {
@@ -23,7 +34,7 @@
 
 .mimic {
     height: 60px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 712px) {
