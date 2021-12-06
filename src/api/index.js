@@ -33,11 +33,11 @@ const sendMessage = ({ name, email, frames, message }) => fetch(API_URL + "messa
         "content": message
     })
 }).then(({ status }) => {
-    if (status === "201") {
+    if (status === 201) {
         NotificationManager.success('Message submitted. It will appear after being reviewed');
-    } else if (status === "409") {
+    } else if (status === 409) {
         NotificationManager.warning('There is already a message with the given author name or email');
-    } else if (status === "429") {
+    } else if (status === 429) {
         NotificationManager.warning('You already submitted a message. Please try again later');
     } else {
         NotificationManager.error('ERROR[' + status + '] Please contact vucuongJim@gmail.com or R Jim#1231');
