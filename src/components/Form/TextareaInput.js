@@ -7,9 +7,7 @@ class TextareaInput extends Component {
 
         return (
             <label className="input">
-                <textarea name={name} onChange={onChange} placeholder={placeholder} {...other}>
-                    {value}
-                </textarea>
+                <textarea name={name} value={value} onChange={onChange} placeholder={placeholder} {...other} />
                 <span>{title}:</span>
             </label>
         )

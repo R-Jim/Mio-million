@@ -68,10 +68,27 @@ class SendMessage extends Component {
         })
     }
 
+    validateData = (email, name, message) => {
+        if (!email || email.trim().length === 0) {
+            alert("Email required")
+            return false
+        } else if (!name || name.trim().length === 0) {
+            alert("Name required")
+            return false
+        } else if (!message || message.trim().length === 0) {
+            alert("Message required")
+            return false
+        }
+        return true
+    }
+
     submitForm = () => {
         const { sendMessages } = this.props;
         const { form: { email, name, message, myMioFa } } = this.state;
-        sendMessages({ email, name, message, frames: myMioFa.frames });
+        if (this.validateData(email, name, message)) {
+            sendMessages({ email, name, message, frames: myMioFa.frames });
+            this.resetForm();
+        }
     }
 
     render() {
@@ -85,7 +102,7 @@ class SendMessage extends Component {
                 <Form>
                     <Input type="text" title="Email" name="email" onChange={this.handleChange} value={email} placeholder="example@gmail.com" />
                     <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (20 characters max)" maxLength="20" />
-                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{resize: "none;"}} />
+                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
                     <Input type="multi" title="Your MioFa" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="URL" limit={2} />
                     <input type="button" value="Submit" onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />

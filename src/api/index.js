@@ -31,6 +31,13 @@ const sendMessage = ({ name, email, frames, message }) => fetch(API_URL + "messa
         },
         "content": message
     })
-}).then();
+}).then(({ status }) => {
+    if (status === "201") {
+        alert("Your message is submitted. It will appear after being reviewed")
+    }
+    alert("ERROR[" + status + "] Please contact vucuongJim@gmail.com or R Jim#1231")
+});
 
-export default { getMessage, sendMessage }
+const api = { getMessage, sendMessage }
+
+export default api

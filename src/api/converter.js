@@ -6,4 +6,6 @@ const messageConverter = ({ content, author: { name, avatar } }) => {
     }
 }
 
-export default { messageConverter }
+const converter = { messageConverter }
+
+export default converter
