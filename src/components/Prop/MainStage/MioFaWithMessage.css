@@ -26,3 +26,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.message-container.big {
+    width: 250px;
+    height: 125px;
+    left: -65px;
+    top: -60px;
+}

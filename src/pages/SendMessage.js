@@ -84,8 +84,8 @@ class SendMessage extends Component {
                 </div>
                 <Form>
                     <Input type="text" title="Email" name="email" onChange={this.handleChange} value={email} placeholder="example@gmail.com" />
-                    <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (10 characters max)" maxLength="10" />
-                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (100 characters max)" rows="4" maxLength="100" />
+                    <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (20 characters max)" maxLength="20" />
+                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{resize: "none;"}} />
                     <Input type="multi" title="Your MioFa" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="URL" limit={2} />
                     <input type="button" value="Submit" onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />
