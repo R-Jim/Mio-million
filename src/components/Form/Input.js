@@ -5,16 +5,16 @@ import TextareaInput from './TextareaInput';
 
 class Input extends Component {
     render() {
-        const { type, title, name, onChange, placeholder, ...other } = this.props;
+        const { type, title, name, onChange, value, placeholder, ...other } = this.props;
         switch (type) {
             case "multi":
-                return <MultipleInput title={title} type={type} name={name} onChange={onChange} placeholder={placeholder} {...other} />
+                return <MultipleInput title={title} type={type} value={value} name={name} onChange={onChange} placeholder={placeholder} {...other} />
             case "textarea":
-                return <TextareaInput title={title} type={type} name={name} onChange={onChange} placeholder={placeholder} {...other} />
+                return <TextareaInput title={title} type={type} value={value ?? ""} name={name} onChange={onChange} placeholder={placeholder} {...other} />
             default:
                 return (
                     <label className="input">
-                        <input type={type} name={name} onChange={onChange} placeholder={placeholder} {...other} />
+                        <input type={type} name={name} value={value ?? ""} onChange={onChange} placeholder={placeholder} {...other} />
                         <span>{title}:</span>
                     </label>
                 )

@@ -1,5 +1,40 @@
 .navigation-button {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
+
+    color: #fff;
+    background-color: #424242;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(bottom, rgb(255, 255, 255) 0%, rgb(62, 184, 229) 100%);
+    box-shadow: inset 0px 1px 0px #2e2e2e, 0px 7px 0px #2b2b2b;
+    border-radius: 5px;
+}
+
+.navigation-button button {
+    padding-right: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    padding-top: 0;
+    padding-bottom: 5px;
+    background-color: transparent;
+    outline: none;
+    border: none; 
+}
+
+.navigation-button:hover {
+    text-shadow: 0px 1px 1px rgba(197, 197, 197, 0.3);
+    background-color: #3d3d3d;
+    box-shadow: inset 0px 1px 0px #5f5f5f, inset 0px -1px 0px #2b2b2b;
+    bottom: 15px;
+}
+
+.navigation-button img {
+    position: absolute;
+    top: 3px;
+    right: -20px;
+    transform: rotate(340deg);
 }

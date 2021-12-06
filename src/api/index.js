@@ -1,4 +1,5 @@
 import converter from "./converter";
+import { NotificationManager } from 'react-notifications';
 
 const API_URL = process.env.REACT_APP_API_URL ?? "";
 
@@ -31,6 +32,18 @@ const sendMessage = ({ name, email, frames, message }) => fetch(API_URL + "messa
         },
         "content": message
     })
-}).then();
+}).then(({ status }) => {
+    if (status === 201) {
+        NotificationManager.success('Message submitted. It will appear after being reviewed');
+    } else if (status === 409) {
+        NotificationManager.warning('There is already a message with the given author name or email');
+    } else if (status === 429) {
+        NotificationManager.warning('You already submitted a message. Please try again later');
+    } else {
+        NotificationManager.error('ERROR[' + status + '] Please contact vucuongJim@gmail.com or R Jim#1231');
+    }
+});
 
-export default { getMessage, sendMessage }
+const api = { getMessage, sendMessage }
+
+export default api

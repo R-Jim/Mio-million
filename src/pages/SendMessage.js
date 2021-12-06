@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NotificationManager } from 'react-notifications';
 import Form from '../components/Form/Form'
 import Input from '../components/Form/Input'
 import Button from '../components/Navigation/Button'
@@ -68,10 +69,31 @@ class SendMessage extends Component {
         })
     }
 
+    validateData = (email, name, message) => {
+        const missingFields = []
+        if (!email || email.trim().length === 0) {
+            missingFields.push("Email")
+        }
+        if (!name || name.trim().length === 0) {
+            missingFields.push("Name")
+        }
+        if (!message || message.trim().length === 0) {
+            missingFields.push("Message")
+        }
+        if (missingFields.length > 0) {
+            NotificationManager.warning("Missing fields: " + missingFields.join(", "))
+            return false
+        }
+        return true
+    }
+
     submitForm = () => {
         const { sendMessages } = this.props;
         const { form: { email, name, message, myMioFa } } = this.state;
-        sendMessages({ email, name, message, frames: myMioFa.frames });
+        if (this.validateData(email, name, message)) {
+            sendMessages({ email, name, message, frames: myMioFa.frames });
+            this.resetForm();
+        }
     }
 
     render() {
@@ -80,17 +102,18 @@ class SendMessage extends Component {
             <div className="send-message-container">
                 <div className="mimic pagination-controller" />
                 <div className="preview-container">
+                    <span>Preview</span>
                     {this.renderPreviewMessageSection()}
                 </div>
                 <Form>
                     <Input type="text" title="Email" name="email" onChange={this.handleChange} value={email} placeholder="example@gmail.com" />
                     <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (20 characters max)" maxLength="20" />
-                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{resize: "none;"}} />
+                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
                     <Input type="multi" title="Your MioFa" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="URL" limit={2} />
                     <input type="button" value="Submit" onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />
                 </Form>
-                <Button link="/" text="Back to main" />
+                <Button link="/" text="To Stage" />
             </div>
         )
     }
