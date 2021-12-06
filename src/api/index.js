@@ -34,8 +34,13 @@ const sendMessage = ({ name, email, frames, message }) => fetch(API_URL + "messa
 }).then(({ status }) => {
     if (status === "201") {
         alert("Your message is submitted. It will appear after being reviewed")
+    } else if (status === "409") {
+        alert("There is already a message with the given author name or email")
+    } else if (status === "429") {
+        alert("You already submitted a message. Please try again later")
+    } else {
+        alert("ERROR[" + status + "] Please contact vucuongJim@gmail.com or R Jim#1231")
     }
-    alert("ERROR[" + status + "] Please contact vucuongJim@gmail.com or R Jim#1231")
 });
 
 const api = { getMessage, sendMessage }
