@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
 import './App.css';
 import Anniversary from './pages/Anniversary';
@@ -8,12 +8,12 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Anniversary />} />
             <Route path="/send-message" element={<SendMessage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter >
       </div>
     </div>
   );
