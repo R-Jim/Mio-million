@@ -7,7 +7,7 @@ export class MioFaWithMessage extends Component {
         const { message, isPreview } = this.props
         return (
             <div className="miofa-with-message">
-                <div className="message-container">
+                <div className={"message-container" + (message.length > 100 ? " big" : "")}>
                     {message}
                 </div>
                 <MioFa disablePop={true} isPreview={isPreview} />
