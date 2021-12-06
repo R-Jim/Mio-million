@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NotificationManager } from 'react-notifications';
 import Form from '../components/Form/Form'
 import Input from '../components/Form/Input'
 import Button from '../components/Navigation/Button'
@@ -69,14 +70,18 @@ class SendMessage extends Component {
     }
 
     validateData = (email, name, message) => {
+        const missingFields = []
         if (!email || email.trim().length === 0) {
-            alert("Email required")
-            return false
-        } else if (!name || name.trim().length === 0) {
-            alert("Name required")
-            return false
-        } else if (!message || message.trim().length === 0) {
-            alert("Message required")
+            missingFields.push("Email")
+        }
+        if (!name || name.trim().length === 0) {
+            missingFields.push("Name")
+        }
+        if (!message || message.trim().length === 0) {
+            missingFields.push("Message")
+        }
+        if (missingFields.length > 0) {
+            NotificationManager.warning("Missing fields: " + missingFields.join(", "))
             return false
         }
         return true

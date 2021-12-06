@@ -1,5 +1,7 @@
 import { HashRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
+import { NotificationContainer } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 import './App.css';
 import Anniversary from './pages/Anniversary';
 import SendMessage from './pages/SendMessage';
@@ -15,6 +17,7 @@ function App() {
           </Routes>
         </HashRouter >
       </div>
+      <NotificationContainer />
     </div>
   );
 }
