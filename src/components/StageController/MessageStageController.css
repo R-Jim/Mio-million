@@ -2,7 +2,11 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    background-color: #17202e;
+    background-color: transparent;
+    background-image: url("../../assets/stages/mio/stage-stand.png");
+    background-size: 1322px 86px;
+    background-repeat: no-repeat;
+    background-position: center;
     color: white;
     padding: 15px 0;
 }

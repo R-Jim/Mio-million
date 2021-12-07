@@ -1,5 +1,5 @@
 .main-stage-container {
-    min-height: calc(100vh - 362px);
+    min-height: calc(100vh - 479px);
     width: 100%;
     background-color: #0b111c;
     background-image: url("../../assets/stages/main/tile.png");

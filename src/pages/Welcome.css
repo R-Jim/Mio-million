@@ -31,14 +31,14 @@
 
 .mio-stage-curtain {
     width: 100%;
-    height: 350px;
+    height: 467px;
     background-color: #fffef1;
     animation: mio-stage-curtain-animate 2s linear 2s;
 }
 
 .main-stage-curtain-container {
     width: 100%;
-    height: calc(100vh - 350px);
+    height: calc(100vh - 467px);
     display: flex;
 }
 
