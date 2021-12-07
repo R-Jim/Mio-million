@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import './MyMioFa.css'
-import MioFa1 from '../../../assets/prop/fan/miofa-1.png'
-import MioFa2 from '../../../assets/prop/fan/miofa-2.png'
+import MioFa1 from '../../../assets/prop/fan/MiochunRig-Front.png'
+import MioFa2 from '../../../assets/prop/fan/MiochunRig-Front2.png'
+import MioFaError from '../../../assets/prop/fan/MiochunRig-Error.png'
 
 const defaultFrames = [
+    MioFa2,
     MioFa1,
-    MioFa2
 ]
 
 class MyMioFa extends Component {
     getDefautState = () => ({
         isDespawn: false,
         currentIndex: 0,
+        errorFrameIndexes: [],
     })
 
     state = this.getDefautState()
@@ -86,14 +88,27 @@ class MyMioFa extends Component {
         )
     }
 
+    setErrorFrame = (index) => {
+        const { errorFrameIndexes } = this.state;
+        errorFrameIndexes.push(index)
+        this.setState({
+            errorFrameIndexes
+        })
+    }
 
     renderFrames = () => {
-        const { currentIndex } = this.state;
+        const { currentIndex, errorFrameIndexes } = this.state;
         const frames = this.getFrames()
         return (
             <div>
                 {frames.map((frame, index) =>
-                    <img key={index} src={frame} width={currentIndex === index ? "90" : "0"} height="90" alt="" />
+                    <img
+                        key={index}
+                        src={errorFrameIndexes.find(i => i === index) !== undefined ? MioFaError : frame}
+                        width={currentIndex === index ? "90" : "0"}
+                        height="90"
+                        alt=""
+                        onError={() => this.setErrorFrame(index)} />
                 )}
             </div>
         )

@@ -1,6 +1,8 @@
 :root {
     --miofa-frame1: url("../../../assets/prop/fan/MiochunRig.png");
     --miofa-frame2: url("../../../assets/prop/fan/MiochunRig2.png");
+    --miofa-headband-frame1: url("../../../assets/prop/fan/MiochunRig-HeadBand.png");
+    --miofa-headband-frame2: url("../../../assets/prop/fan/MiochunRig-HeadBand2.png");
 }
 
 .miofa-container {
@@ -30,12 +32,15 @@
     0% {
         transform: none;
     }
+
     49% {
         transform: none;
     }
+
     50% {
         transform: translateY(-10px);
     }
+
     100% {
         transform: translateY(-10px);
     }
@@ -44,28 +49,56 @@
 .miofa {
     width: 90px;
     height: 90px;
-    background-image: var(--miofa-frame2);
-    animation-name: message-fan-holder-animate;
     animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
-    background-size: 80%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-@keyframes message-fan-holder-animate {
+.miofa.normal {
+    animation-name: miofa-normal-animate;
+}
+
+.miofa.headband {
+    animation-name: miofa-headband-animate;
+}
+
+@keyframes miofa-normal-animate {
     0% {
-        background-image: var(--miofa-frame2);
+        background-image: var(--miofa-frame1);
     }
+
     49% {
+        background-image: var(--miofa-frame1);
+    }
+
+    50% {
         background-image: var(--miofa-frame2);
     }
-    50% {
-        background-image: var(--miofa-frame1);
-    }
+
     100% {
-        background-image: var(--miofa-frame1);
+        background-image: var(--miofa-frame2);
+    }
+}
+
+
+@keyframes miofa-headband-animate {
+    0% {
+        background-image: var(--miofa-headband-frame1);
+    }
+
+    49% {
+        background-image: var(--miofa-headband-frame1);
+    }
+
+    50% {
+        background-image: var(--miofa-headband-frame2);
+    }
+
+    100% {
+        background-image: var(--miofa-headband-frame2);
     }
 }
 
