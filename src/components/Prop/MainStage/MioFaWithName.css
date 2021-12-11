@@ -12,11 +12,12 @@
     height: 20px;
     z-index: 10;
     position: absolute;
-    top: -30px;
-    border: 1px solid #b9b9b9;
-    border-radius: 10px;
-    background-color: white;
-    color: black;
+    top: -40px;
+    border: 6px solid transparent;
+    border-image: linear-gradient(to top, #161245b6 , #4d4fafa8) 30 stretch;
+    border-image-slice: 1;
+    background-color: #0b111c;
+    color: white;
     padding: 5px;
     font-size: 14px;
     overflow: hidden;

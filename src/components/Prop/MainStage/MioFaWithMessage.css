@@ -15,10 +15,10 @@
     left: -30px;
     position: absolute;
     top: -15px;
-    border: 1px solid #b9b9b9;
+    border: 2px dashed #aa8ac8;
     border-radius: 10px;
-    background-color: white;
-    color: black;
+    background-color: #0b111ce3;
+    color: #d7e5ee;
     padding: 10px;
     font-size: 14px;
     overflow: hidden;

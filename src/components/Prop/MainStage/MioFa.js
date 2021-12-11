@@ -45,6 +45,11 @@ export class MioFa extends Component {
         clearTimeout(this.updateTimeOut)
     }
 
+    getMiofaClass = () => {
+        const miofaClasses = ["normal", "normal", "normal", "normal", "normal", "headband"]
+        return miofaClasses[Math.floor(Math.random() * miofaClasses.length)]
+    }
+
     render() {
         const { popTime, isDespawn } = this.state;
 
@@ -57,8 +62,8 @@ export class MioFa extends Component {
         }
         return (
             <div className="miofa-container" style={animationConfig} onLoad={this.check}>
-                {popTime !== 0 ? <div className="debug-indicator">{popTime}</div> : null}
-                <div className="miofa" />
+                {/* {popTime !== 0 ? <div className="debug-indicator">{popTime}</div> : null} */}
+                <div className={"miofa " + this.getMiofaClass()} />
             </div>
         )
     }
