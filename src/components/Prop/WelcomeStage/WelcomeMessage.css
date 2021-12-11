@@ -1,3 +1,45 @@
-.welcome-message{
+.welcome-message-container {
     margin-top: 20px;
+    position: relative;
+}
+
+.welcome-message {
+    margin-top: 20px;
+    width: 480px;
+    height: 70px;
+    z-index: 10;
+    border: 2px dashed #7b96d5;
+    border-radius: 10px;
+    background-color: #0b111ce3;
+    color: #d7e5ee;
+    padding: 10px;
+    font-size: 14px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.the-mion-family-tag {
+    width: 170px;
+    height: 20px;
+    z-index: 10;
+    position: absolute;
+    bottom: -24px;
+    right: 25px;
+    border: 6px solid transparent;
+    border-image: linear-gradient(to top, #161245b6, #4d4fafa8) 30 stretch;
+    border-image-slice: 1;
+    background-color: #0b111c;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.the-mion-family-tag img {
+    position: absolute;
+    top: 2px;
+    right: -25px;
+    transform: rotate(340deg);
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Curtain from '../components/Prop/WelcomeStage/Curtain'
 import LoadingBar from '../components/Prop/WelcomeStage/LoadingBar'
 import LoadingMio from '../components/Prop/WelcomeStage/LoadingMio'
 import ReadyMio from '../components/Prop/WelcomeStage/ReadyMio'
@@ -30,7 +31,7 @@ class Welcome extends Component {
         setTimeout(() => {
             onFinished()
         }
-            , 4000
+            , 6000
         )
     }
 
@@ -44,10 +45,12 @@ class Welcome extends Component {
     renderCurtain = () => {
         return (
             <div className="curtain-container">
-                <div className="mio-stage-curtain" />
+                <div className="mio-stage-curtain">
+                    <Curtain isHorizontal={true} />
+                </div>
                 <div className="main-stage-curtain-container">
-                    <div className="left" />
-                    <div className="right" />
+                    <Curtain className="left" />
+                    <Curtain className="right" />
                 </div>
             </div>
         )
