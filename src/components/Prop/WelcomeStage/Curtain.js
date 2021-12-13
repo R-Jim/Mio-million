@@ -6,12 +6,10 @@ class Curtain extends Component {
         const { isHorizontal = false, className = "" } = this.props
         const numberOfFrames = 8
         const frames = []
-        const width = !isHorizontal ? 100 / numberOfFrames + "%" : "100%"
-        const height = isHorizontal ? 100 / numberOfFrames + "%" : "100%"
         for (let i = 0; i < numberOfFrames; i++) {
             const animationDuration = 3 / (numberOfFrames - i) + 1 + "s"
             frames.push(
-                <div key={i} className='curtain-frame' style={{ width, height, animationDuration }} />
+                <div key={i} className={'curtain-frame ' + (isHorizontal ? 'horizontal' : 'vertical')} style={{ animationDuration }} />
             )
         }
         return (
