@@ -2,7 +2,7 @@
     --loading-mio-frame1: url("../../../assets/prop/welcome/mio-sleep-1.png");
     --loading-mio-frame2: url("../../../assets/prop/welcome/mio-sleep-2.png");
 }
-.loading-mio {
+.mio.loading {
     width: 200px;
     height: 180px;
 

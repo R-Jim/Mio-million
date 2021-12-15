@@ -62,12 +62,12 @@ class Welcome extends Component {
         return (
             <div className="welcome-container">
                 <div style={isSet ? { animation } : {}}>
-                    {isReady ?
-                        <div onClick={this.handleTransition}>
-                            <ReadyMio />
-                        </div>
-                        : <LoadingMio />}
-                    <LoadingBar />
+                    <div className='welcome-stage'>
+                        {isReady ?
+                            <ReadyMio onClick={this.handleTransition} />
+                            : <LoadingMio />}
+                        <LoadingBar />
+                    </div>
                     <WelcomeMessage />
                 </div>
             </div>

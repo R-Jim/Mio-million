@@ -3,7 +3,7 @@
     --box-mio-frame1: url("../../../assets/prop/welcome/mio-box.png");
     --box-mio-frame2: url("../../../assets/prop/welcome/mio-box-peek.png");
 }
-.ready-mio {
+.mio.ready {
     width: 200px;
     height: 180px;
     background-image: var(--box-mio-frame1);
@@ -11,7 +11,7 @@
     background-size: cover;    
 }
 
-.ready-mio:hover {
+.mio.ready:hover {
     background-image: var(--box-mio-frame2);
     cursor: pointer;
 }

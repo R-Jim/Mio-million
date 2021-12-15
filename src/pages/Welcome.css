@@ -13,6 +13,29 @@
     align-items: center;
 }
 
+.welcome-stage {
+    width: 330px;
+    height: 200px;
+    position: relative;
+    background: url("../assets/prop/welcome/welcome-stand.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-stage>.mio {
+    position: absolute;
+    bottom: 50px;
+}
+
+.welcome-stage>.loading-container {
+    position: absolute;
+    bottom: 8px;
+}
+
 @keyframes hide-welcome-container-animate {
     0% {}
 

@@ -3,8 +3,9 @@ import './ReadyMio.css'
 
 class ReadyMio extends Component {
     render() {
+        const { onClick } = this.props
         return (
-            <div className="ready-mio" />
+            <div className="mio ready" onClick={onClick} />
         )
     }
 }

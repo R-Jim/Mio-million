@@ -4,7 +4,7 @@ import './LoadingMio.css'
 class LoadingMio extends Component {
     render() {
         return (
-            <div className="loading-mio" />
+            <div className="mio loading" />
         )
     }
 }
