@@ -5,9 +5,9 @@ import MioFaWithName from '../Prop/MainStage/MioFaWithName'
 import MyMioFa from '../Prop/MainStage/MyMioFa'
 import './MessageSection.css'
 
-export class MessageSection extends Component {
+class MessageSection extends Component {
     renderMioFa = (_, index) => {
-        const { isPreview } = this.props;
+        const { isPreview } = this.props
         return <MioFa key={index} isPreview={isPreview} />
     }
 
@@ -16,7 +16,8 @@ export class MessageSection extends Component {
     }
 
     render() {
-        const { message = "Your messages for Mio.", name = "- MioFa -", frames = [], isPreview } = this.props
+        const { message = "Your messages for Mio.", name = "- MioFa -", frames = [], isPreview }
+            = this.props
         return (
             <div className="message-section-container">
                 {/* 3x4 */}

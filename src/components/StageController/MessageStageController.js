@@ -7,9 +7,9 @@ import './MessageStageController.css'
 
 class MessageStageController extends Component {
     nextPageHandler = () => {
-        const { nextPage, fetchMessages } = this.props;
-        const { configState: { current, items, pageSize } } = this.props;
-        const nextIndex = current + 1;
+        const { nextPage, fetchMessages } = this.props
+        const { configState: { current, items, pageSize } } = this.props
+        const nextIndex = current + 1
         if (items.length < nextIndex * pageSize) {
             fetchMessages({ page: nextIndex, pageSize: pageSize })
         }
@@ -17,8 +17,8 @@ class MessageStageController extends Component {
     }
     
     render() {
-        const { previousPage } = this.props;
-        const { configState: { current, pageCount } } = this.props;
+        const { previousPage } = this.props
+        const { configState: { current, pageCount } } = this.props
 
         return (
             <div className="pagination-controller">

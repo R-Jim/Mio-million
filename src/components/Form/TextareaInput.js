@@ -3,7 +3,8 @@ import './Input.css'
 
 class TextareaInput extends Component {
     render() {
-        const { type, title, name, onChange, placeholder, value, ...other } = this.props;
+        const { type, title, name, onChange, placeholder, value, ...other }
+            = this.props
 
         return (
             <label className="input">

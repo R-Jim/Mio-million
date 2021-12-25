@@ -1,28 +1,28 @@
 import React, { Component } from 'react'
-import MioFaSection from '../Section/MioFaSection';
+import MioFaSection from '../Section/MioFaSection'
 import './LayoutBuilder.css'
 
 class LayoutBuilder extends Component {
     getDefaultSection = (key) => {
-        const dimentions = key.split('x');
-        const x = dimentions[0];
-        const y = dimentions[1];
+        const dimentions = key.split('x')
+        const x = dimentions[0]
+        const y = dimentions[1]
         return (
             <MioFaSection x={x} y={y} />
         )
     }
 
     mapSection = (key, index) => {
-        const { mapping } = this.props;
-        const section = mapping[key] ?? this.getDefaultSection(key);
-        return { ...section, key: index };
+        const { mapping } = this.props
+        const section = mapping[key] ?? this.getDefaultSection(key)
+        return { ...section, key: index }
     }
 
     getMappedSectionsToLayout = (layout) => {
         if (layout == null) {
-            return;
+            return
         }
-        return layout.map(this.mapSection);
+        return layout.map(this.mapSection)
     }
 
     getLayouts = () => {
@@ -30,9 +30,9 @@ class LayoutBuilder extends Component {
     }
 
     getLayout = () => {
-        const layouts = this.getLayouts();
-        const layoutIndex = Math.floor(Math.random() * layouts.length);
-        return layouts[layoutIndex];
+        const layouts = this.getLayouts()
+        const layoutIndex = Math.floor(Math.random() * layouts.length)
+        return layouts[layoutIndex]
     }
 
     render() {
