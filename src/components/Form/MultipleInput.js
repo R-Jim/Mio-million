@@ -41,14 +41,14 @@ class MultipleInput extends Component {
 
     renderInputAction = (index, name) => {
         if (index > 0) {
-            return this.renderRemoveItemAction(index)
+            return this.renderRemoveItemAction(index, name)
         }
         const { numberOfItem } = this.state
         const isAtLimit = numberOfItem === this.getLimit()
         return this.renderAddItemAction(index, name, isAtLimit)
     }
 
-    renderRemoveItemAction = (index) => (
+    renderRemoveItemAction = (index, name) => (
         <div
             key={index}
             className="action"
