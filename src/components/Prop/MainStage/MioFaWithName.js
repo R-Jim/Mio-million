@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MioFa from './MioFa'
 import './MioFaWithName.css'
 
-export class MioFaWithName extends Component {
+class MioFaWithName extends Component {
     render() {
         const { name, isPreview } = this.props
         return (

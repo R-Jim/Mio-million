@@ -9,7 +9,7 @@ const getPopTime = (props) => {
     return Math.floor(Math.random() * 3) * Math.floor(Math.random() * 3 + 2)
 }
 
-export class MioFa extends Component {
+class MioFa extends Component {
     getDefautState = () => ({
         popTime: getPopTime(this.props),
         isDespawn: false,
@@ -28,7 +28,7 @@ export class MioFa extends Component {
 
     shouldComponentUpdate = (nextProps) => {
         if (this.props.isPreview) {
-            return false;
+            return false
         }
 
         if (nextProps !== this.props) {
@@ -51,10 +51,10 @@ export class MioFa extends Component {
     }
 
     render() {
-        const { popTime, isDespawn } = this.state;
+        const { popTime, isDespawn } = this.state
 
-        const spawnTime = isDespawn ? this.getSpawnTime() * 2 : this.getSpawnTime();
-        const animationName = isDespawn ? "miofa-despawn" : "miofa-spawn, miofa-animate";
+        const spawnTime = isDespawn ? this.getSpawnTime() * 2 : this.getSpawnTime()
+        const animationName = isDespawn ? "miofa-despawn" : "miofa-spawn, miofa-animate"
         const animationConfig = {
             animationName,
             animationDuration: spawnTime + "s, " + popTime + "s",

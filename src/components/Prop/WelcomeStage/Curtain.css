@@ -7,3 +7,13 @@
 .curtain-frame {
     box-sizing: border-box;
 }
+
+.curtain-frame.horizontal {
+    width: 100%;
+    height: calc(100% / 8);
+}
+
+.curtain-frame.vertical {
+    width: calc(100% / 8);
+    height: 100%;
+}

@@ -57,17 +57,17 @@ class Welcome extends Component {
     }
 
     renderWelcome = () => {
-        const { isReady, isSet } = this.state;
+        const { isReady, isSet } = this.state
         const animation = "hide-welcome-container-animate 1s linear 1"
         return (
             <div className="welcome-container">
                 <div style={isSet ? { animation } : {}}>
-                    {isReady ?
-                        <div onClick={this.handleTransition}>
-                            <ReadyMio />
-                        </div>
-                        : <LoadingMio />}
-                    <LoadingBar />
+                    <div className='welcome-stage'>
+                        {isReady ?
+                            <ReadyMio onClick={this.handleTransition} />
+                            : <LoadingMio />}
+                        <LoadingBar />
+                    </div>
                     <WelcomeMessage />
                 </div>
             </div>
@@ -75,7 +75,7 @@ class Welcome extends Component {
     }
 
     render() {
-        const { isGo } = this.state;
+        const { isGo } = this.state
         return isGo ? this.renderCurtain() : this.renderWelcome()
     }
 }

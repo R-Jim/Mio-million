@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NotificationManager } from 'react-notifications';
+import { NotificationManager } from 'react-notifications'
 import Form from '../components/Form/Form'
 import Input from '../components/Form/Input'
 import Button from '../components/Navigation/Button'
@@ -43,7 +43,7 @@ class SendMessage extends Component {
     }
 
     handleChange = ({ target: { name, value } }) => {
-        let { form } = this.state;
+        let { form } = this.state
         const result = this.updateValue(form, name, value)
         this.setState({
             form: { ...result }
@@ -51,7 +51,7 @@ class SendMessage extends Component {
     }
 
     updateValue = (parent, name, value) => {
-        const splits = name.split(".", 2);
+        const splits = name.split(".", 2)
         if (splits.length > 1) {
             return { ...parent, [splits[0]]: this.updateValue(parent[splits[0]], splits[1], value) }
         }
@@ -88,16 +88,16 @@ class SendMessage extends Component {
     }
 
     submitForm = () => {
-        const { sendMessages } = this.props;
-        const { form: { email, name, message, myMioFa } } = this.state;
+        const { sendMessages } = this.props
+        const { form: { email, name, message, myMioFa } } = this.state
         if (this.validateData(email, name, message)) {
             sendMessages({ email, name, message, frames: myMioFa.frames });
-            this.resetForm();
+            this.resetForm()
         }
     }
 
     render() {
-        const { form: { email, message, name, myMioFa } } = this.state;
+        const { form: { email, message, name, myMioFa } } = this.state
         return (
             <div className="send-message-container">
                 <div className="mimic pagination-controller" />

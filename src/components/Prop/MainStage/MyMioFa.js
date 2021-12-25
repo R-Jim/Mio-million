@@ -19,26 +19,26 @@ class MyMioFa extends Component {
     state = this.getDefautState()
 
     resetState = () => {
-        this.setState(this.getDefautState());
+        this.setState(this.getDefautState())
     }
 
     isFramesChange = (nextProps) => {
-        const { frames } = this.props;
-        const { frames: nextFrames } = nextProps;
+        const { frames } = this.props
+        const { frames: nextFrames } = nextProps
         if (nextFrames.length !== frames.length) {
-            return true;
+            return true
         }
         nextFrames.forEach((url, index) => {
             if (frames[index] !== url) {
-                return true;
+                return true
             }
-        });
-        return false;
+        })
+        return false
     }
 
     shouldComponentUpdate = (nextProps) => {
         if (this.props.isPreview) {
-            return false;
+            return false
         }
 
         if (this.isFramesChange(nextProps)) {
@@ -48,7 +48,7 @@ class MyMioFa extends Component {
                 , 1000
             )
         }
-        return true;
+        return true
     }
 
     componentWillUnmount = () => {
@@ -57,39 +57,41 @@ class MyMioFa extends Component {
     }
 
     getFrames = () => {
-        let { frames = [] } = this.props;
+        let { frames = [] } = this.props
         if (frames.length === 0) {
-            return defaultFrames;
+            return defaultFrames
         }
-        return frames;
+        return frames
     }
 
     getNextFrameIndex = () => {
-        const frames = this.getFrames();
-
-        let { currentIndex } = this.state;
-        currentIndex++;
-        if (!frames || currentIndex >= frames.length) {
+        const frames = this.getFrames()
+        let { currentIndex } = this.state
+        if (!frames || ++currentIndex >= frames.length) {
             return 0;
         }
-        return currentIndex;
+        return currentIndex
     }
 
     updateIndex = () => {
-        const nextIndex = this.getNextFrameIndex();
+        const nextIndex = this.getNextFrameIndex()
         this.setState({
             currentIndex: nextIndex
         })
     }
 
     componentDidMount = () => {
-        setTimeout(() => { this.animationInterval = setInterval(this.updateIndex.bind(this), 500) }
+        setTimeout(() => {
+            this.animationInterval = setInterval(
+                this.updateIndex.bind(this), 500
+            )
+        }
             , 500
         )
     }
 
     setErrorFrame = (index) => {
-        const { errorFrameIndexes } = this.state;
+        const { errorFrameIndexes } = this.state
         errorFrameIndexes.push(index)
         this.setState({
             errorFrameIndexes
@@ -97,11 +99,10 @@ class MyMioFa extends Component {
     }
 
     renderFrames = () => {
-        const { currentIndex, errorFrameIndexes } = this.state;
-        const frames = this.getFrames()
+        const { currentIndex, errorFrameIndexes } = this.state
         return (
             <div>
-                {frames.map((frame, index) =>
+                {this.getFrames().map((frame, index) =>
                     <img
                         key={index}
                         src={errorFrameIndexes.find(i => i === index) !== undefined ? MioFaError : frame}
@@ -115,9 +116,9 @@ class MyMioFa extends Component {
     }
 
     render() {
-        const { isDespawn } = this.state;
+        const { isDespawn } = this.state
 
-        const animationName = isDespawn ? "miofa-despawn" : "miofa-spawn";
+        const animationName = isDespawn ? "miofa-despawn" : "miofa-spawn"
         const animationConfig = {
             animationName,
             animationDuration: isDespawn ? "2s" : "1s",

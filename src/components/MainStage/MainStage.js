@@ -5,7 +5,7 @@ import MessageStageController from '../StageController/MessageStageController'
 import Button, { Icon } from '../Navigation/Button'
 import './MainStage.css'
 
-export class MainStage extends Component {
+class MainStage extends Component {
     render() {
         return (
             <div className="main-stage-container">

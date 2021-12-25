@@ -4,7 +4,7 @@ import './MioFaWithMessage.css'
 
 const message_border_colors = ["#e6e7e7", "#7b96d5", "#7b96d5", "#7b96d5", "#b20335"]
 
-export class MioFaWithMessage extends Component {
+class MioFaWithMessage extends Component {
     render() {
         const { message, isPreview } = this.props
         const borderColor = message_border_colors[Math.floor(Math.random() * message_border_colors.length)]
