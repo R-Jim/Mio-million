@@ -8,6 +8,7 @@
     height: 70px;
     z-index: 10;
     border: 2px dashed #7b96d5;
+    box-shadow: 0 0 12px #7b96d5;
     border-radius: 10px;
     background-color: #0b111ce3;
     color: #d7e5ee;
