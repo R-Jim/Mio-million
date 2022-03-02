@@ -15,13 +15,13 @@
 .game-screen>.invader {
     top: 30px;
     background-image: var(--invader);
-    animation: invader-die-left-animation 3s linear infinite;
+    animation: invader-die-left-animation 4.8s linear infinite;
 }
 
 .game-screen>.shot {
     bottom: 10px;
     background-image: var(--shot);
-    animation: shot-left-animation 3s linear infinite;
+    animation: shot-left-animation 4.8s linear infinite;
     opacity: 0;
 }
 
@@ -34,11 +34,11 @@
 }
 
 .game-screen>.invader.right {
-    animation: invader-die-right-animation 3s linear infinite;
+    animation: invader-die-right-animation 4.8s linear infinite;
 }
 
 .game-screen>.shot.right {
-    animation: shot-right-animation 3s linear infinite;
+    animation: shot-right-animation 4.8s linear infinite;
 }
 
 @keyframes invader-die-left-animation {
