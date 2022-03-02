@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Curtain from '../components/Prop/WelcomeStage/Curtain'
+import GameScreen from '../components/Prop/WelcomeStage/GameScreen'
 import LoadingBar from '../components/Prop/WelcomeStage/LoadingBar'
 import LoadingMio from '../components/Prop/WelcomeStage/LoadingMio'
 import ReadyMio from '../components/Prop/WelcomeStage/ReadyMio'
@@ -63,6 +64,11 @@ class Welcome extends Component {
             <div className="welcome-container">
                 <div style={isSet ? { animation } : {}}>
                     <div className='welcome-stage'>
+                        <div className='mio-info-panel'>
+                            <span className='score'>SCORE: 999K</span>
+                            <span className='name'>OOKAMI MIO</span>
+                            <GameScreen />
+                        </div>
                         {isReady ?
                             <ReadyMio onClick={this.handleTransition} />
                             : <LoadingMio />}

@@ -30,22 +30,22 @@
 @keyframes gaming-mio-loop {
 
     /*frame 1*/
-    0%, 10% {
+    0%, 3% {
         background-image: var(--gaming-mio-frame1A);
     }
 
     /**/
-    11%, 13% {
-        background-image: var(--gaming-mio-frame1B);
-    }
-
-    /**/
-    14%, 16% {
+    4%, 6% {
         background-image: var(--gaming-mio-frame1C);
     }
 
     /**/
-    17%, 20% {
+    7%, 10% {
+        background-image: var(--gaming-mio-frame1A);
+    }
+
+    /**/
+    11%, 20% {
         background-image: var(--gaming-mio-frame1B);
     }
 
@@ -59,54 +59,53 @@
         background-image: var(--gaming-mio-frame3B);
     }
 
-    /*frame 3.2*/
-    41%, 50% {
-        background-image: var(--gaming-mio-frame3A);
-    }
-
-    /**/
-    51%, 60% {
-        background-image: var(--gaming-mio-frame3B);
-    }
-
     /*frame 4*/
-    61%, 70% {
+    41%, 43% {
         background-image: var(--gaming-mio-frame4A);
     }
 
     /**/
-    71%, 73% {
-        background-image: var(--gaming-mio-frame4B);
-    }
-
-    /**/
-    74%, 76% {
+    44%, 46% {
         background-image: var(--gaming-mio-frame4C);
     }
 
     /**/
-    77%, 80% {
+    47%, 50% {
+        background-image: var(--gaming-mio-frame4A);
+    }
+
+    /**/
+    51%, 60% {
         background-image: var(--gaming-mio-frame4B);
     }
 
     /*frame 5*/
-    81%, 90% {
+    61%, 63% {
         background-image: var(--gaming-mio-frame5A);
     }
 
-
     /**/
-    91%, 93% {
-        background-image: var(--gaming-mio-frame5B);
-    }
-
-    /**/
-    94%, 96% {
+    64%, 66% {
         background-image: var(--gaming-mio-frame5C);
     }
 
     /**/
-    97%, 100% {
+    67%, 70% {
+        background-image: var(--gaming-mio-frame5A);
+    }
+
+    /**/
+    71%, 80% {
         background-image: var(--gaming-mio-frame5B);
+    }
+
+    /*frame 3.2*/
+    81%, 90% {
+        background-image: var(--gaming-mio-frame3A);
+    }
+
+    /**/
+    91%, 100% {
+        background-image: var(--gaming-mio-frame3B);
     }
 }

@@ -1,0 +1,104 @@
+:root {
+    --invader: url("../../../assets/prop/welcome/space\ invader.png");
+    --invader-die: url("../../../assets/prop/welcome/space\ invader\ die.png");
+    --shot: url("../../../assets/prop/welcome/space\ shot.png");
+}
+
+.game-screen>div {
+    margin: 0 10px;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    background-size: cover;
+}
+
+.game-screen>.invader {
+    top: 30px;
+    background-image: var(--invader);
+    animation: invader-die-left-animation 3s linear infinite;
+}
+
+.game-screen>.shot {
+    bottom: 10px;
+    background-image: var(--shot);
+    animation: shot-left-animation 3s linear infinite;
+    opacity: 0;
+}
+
+.game-screen>.left {
+    left: 0;
+}
+
+.game-screen>.right {
+    right: 0;
+}
+
+.game-screen>.invader.right {
+    animation: invader-die-right-animation 3s linear infinite;
+}
+
+.game-screen>.shot.right {
+    animation: shot-right-animation 3s linear infinite;
+}
+
+@keyframes invader-die-left-animation {
+    0%, 35% {
+        background-image: var(--invader);
+    }
+
+    36%, 50% {
+        background-image: var(--invader-die);
+    }
+
+    51%, 100% {
+        background-image: var(--invader);
+    }
+}
+
+
+@keyframes invader-die-right-animation {
+    0%, 85% {
+        background-image: var(--invader);
+    }
+
+    86%, 100% {
+        background-image: var(--invader-die);
+    }
+}
+
+
+@keyframes shot-left-animation {
+    0%, 16% {
+        opacity: 1;
+        bottom: 10px;
+    }
+
+    17%, 32% {
+        opacity: 1;
+        bottom: 50px;
+    }
+
+    33%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes shot-right-animation {
+    0%, 50% {
+        opacity: 0;
+    }
+
+    51%, 68% {
+        opacity: 1;
+        bottom: 10px;
+    }
+
+    69%, 84% {
+        opacity: 1;
+        bottom: 50px;
+    }
+
+    85%, 100% {
+        opacity: 0;
+    }
+}
