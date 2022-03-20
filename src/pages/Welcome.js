@@ -12,6 +12,7 @@ class Welcome extends Component {
         isReady: false,
         isSet: false,
         isGo: false,
+        isFinished: false,
     }
 
     componentDidMount = () => {
@@ -25,12 +26,13 @@ class Welcome extends Component {
     }
 
     handleRemoveCurtain = () => {
-        const { onFinished } = this.props;
         this.setState({
             isGo: true
         })
         setTimeout(() => {
-            onFinished()
+            this.setState({
+                isFinished: true
+            })
         }
             , 6000
         )
@@ -84,7 +86,12 @@ class Welcome extends Component {
     }
 
     render() {
-        const { isGo } = this.state
+        const { isFinished, isGo } = this.state
+        if (isFinished) {
+            return (
+                <div />
+            )
+        }
         return isGo ? this.renderCurtain() : this.renderWelcome()
     }
 }
