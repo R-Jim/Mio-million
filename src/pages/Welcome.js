@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
+import Button, { Icon } from '../components/Navigation/Button'
 import Curtain from '../components/Prop/WelcomeStage/Curtain'
 import GameScreen from '../components/Prop/WelcomeStage/GameScreen'
 import LoadingBar from '../components/Prop/WelcomeStage/LoadingBar'
 import LoadingMio from '../components/Prop/WelcomeStage/LoadingMio'
-import ReadyMio from '../components/Prop/WelcomeStage/ReadyMio'
 import WelcomeMessage from '../components/Prop/WelcomeStage/WelcomeMessage'
 import './Welcome.css'
 
@@ -69,10 +69,13 @@ class Welcome extends Component {
                             <span className='name'>OOKAMI MIO</span>
                             <GameScreen />
                         </div>
-                        {isReady ?
-                            <ReadyMio onClick={this.handleTransition} />
-                            : <LoadingMio />}
+                        <LoadingMio />
                         <LoadingBar />
+                        {isReady ?
+                            <div className='welcome-action'>
+                                <Button onClick={this.handleTransition} text="See Messages" icon={Icon.Next} />
+                            </div>
+                            : <div />}
                     </div>
                     <WelcomeMessage />
                 </div>

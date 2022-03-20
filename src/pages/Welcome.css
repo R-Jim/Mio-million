@@ -225,3 +225,24 @@
         opacity: 1;
     }
 }
+
+.welcome-action {
+    animation: welcome-action-animation 1s linear;
+}
+
+@keyframes welcome-action-animation {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    80%{
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 712px) {
+    .welcome-message{
+        width: 295px;
+    }
+}

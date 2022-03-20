@@ -1,7 +1,7 @@
 .navigation-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
 
     color: #fff;
     background-color: #424242;
@@ -22,19 +22,46 @@
     padding-bottom: 5px;
     background-color: transparent;
     outline: none;
-    border: none; 
+    border: none;
 }
 
 .navigation-button:hover {
     text-shadow: 0px 1px 1px rgba(197, 197, 197, 0.3);
     background-color: #3d3d3d;
     box-shadow: inset 0px 1px 0px #5f5f5f, inset 0px -1px 0px #2b2b2b;
-    bottom: 15px;
+    bottom: 35px;
 }
 
 .navigation-button img {
+    width: 50px;
+    height: 30px;
     position: absolute;
     top: 3px;
     right: -20px;
     transform: rotate(340deg);
+}
+
+@media (max-width: 712px) {
+    .navigation-button {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .navigation-button:hover {
+        bottom: 15px;
+    }
+
+    .navigation-button {
+        padding: 8px 15px;
+    }
+
+    .navigation-button button {
+        padding: 0;
+    }
+
+    .navigation-button img {
+        width: 25px;
+        height: 15px;
+        right: -13px;
+    }
 }
