@@ -6,13 +6,21 @@ import './Button.css'
 
 class Button extends Component {
     render() {
-        const { link, text, icon = Next } = this.props
+        const { link, text, icon = Next, onClick } = this.props
         return (
             <div className="navigation-button">
-                <Link to={link}>
-                    <button type="button">{text}</button>
-                    <img src={icon} width="50" height="30" alt="" />
-                </Link>
+                {link ?
+                    <Link to={link}>
+                        <button type="button" onClick={onClick}>{text}</button>
+                        <img src={icon} alt="" />
+                    </Link>
+                    :
+                    <>
+                        <button type="button" onClick={onClick}>{text}</button>
+                        <img src={icon} alt="" />
+                    </>
+                }
+
             </div>
         )
     }

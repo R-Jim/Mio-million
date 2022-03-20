@@ -1,15 +1,17 @@
 :root {
-    --mio-frame: url("../../../assets/prop/mio/mio.png");
+    --mio-frame-A: url("../../../assets/prop/mio/Mio\ on\ Stage\ 1A.png");
+    --mio-frame-B: url("../../../assets/prop/mio/Mio\ on\ Stage\ 1B.png");
+    --mio-frame-C: url("../../../assets/prop/mio/Mio\ on\ Stage\ 1C.png");
 }
 
 #mio {
-    width: 120px;
+    width: 140px;
     height: 180px;
     animation-name: mio-animate;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     background-repeat: round;
-    background-image: var(--mio-frame);
+    background-image: var(--mio-frame-A);
     margin: 20px 50%;
     position: absolute;
     bottom: 5px;
@@ -17,9 +19,15 @@
 }
 
 @keyframes mio-animate {
-    48% {}
-    50% {
-        transform: translateY(-15px);
+    0%, 33% {
+        background-image: var(--mio-frame-A);
     }
-    52% {}
+
+    34%, 66% {
+        background-image: var(--mio-frame-B);
+    }
+
+    67%, 100% {
+        background-image: var(--mio-frame-C);
+    }
 }

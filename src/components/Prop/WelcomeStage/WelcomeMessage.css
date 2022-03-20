@@ -7,8 +7,6 @@
     width: 480px;
     height: 70px;
     z-index: 10;
-    border: 2px dashed #7b96d5;
-    box-shadow: 0 0 12px #7b96d5;
     border-radius: 10px;
     background-color: #0b111ce3;
     color: #d7e5ee;
@@ -17,7 +15,8 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
+    line-height: 60px;
+    animation: welcome-message-border-animation 8s linear infinite;
 }
 
 .the-mion-family-tag {
@@ -35,6 +34,7 @@
     padding: 5px;
     font-size: 14px;
     white-space: nowrap;
+    text-shadow: 0 0 2px white;
 }
 
 .the-mion-family-tag img {
@@ -42,4 +42,31 @@
     top: 2px;
     right: -25px;
     transform: rotate(340deg);
+}
+
+@keyframes welcome-message-border-animation {
+    0%, 80% {
+        border: 2px dashed #7b96d5;
+        box-shadow: 0 0 12px #7b96d5;
+    }
+
+    81% {
+        border: 2px dashed transparent;
+        box-shadow: 0 0 12px transparent;
+    }
+
+    82%, 83% {
+        border: 2px dashed #7b96d5;
+        box-shadow: 0 0 12px #7b96d5;
+    }
+
+    84% {
+        border: 2px dashed transparent;
+        box-shadow: 0 0 12px transparent;
+    }
+
+    85%, 100% {
+        border: 2px dashed #7b96d5;
+        box-shadow: 0 0 12px #7b96d5;
+    }
 }

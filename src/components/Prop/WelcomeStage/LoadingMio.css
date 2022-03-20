@@ -1,26 +1,111 @@
 :root {
-    --loading-mio-frame1: url("../../../assets/prop/welcome/mio-sleep-1.png");
-    --loading-mio-frame2: url("../../../assets/prop/welcome/mio-sleep-2.png");
+    --gaming-mio-frame1A: url("../../../assets/prop/welcome/Mio\ gaming\ 1A.png");
+    --gaming-mio-frame1B: url("../../../assets/prop/welcome/Mio\ gaming\ 1B.png");
+    --gaming-mio-frame1C: url("../../../assets/prop/welcome/Mio\ gaming\ 1C.png");
+
+    --gaming-mio-frame3A: url("../../../assets/prop/welcome/Mio\ gaming\ 3A.png");
+    --gaming-mio-frame3B: url("../../../assets/prop/welcome/Mio\ gaming\ 3B.png");
+
+    --gaming-mio-frame4A: url("../../../assets/prop/welcome/Mio\ gaming\ 4A.png");
+    --gaming-mio-frame4B: url("../../../assets/prop/welcome/Mio\ gaming\ 4B.png");
+    --gaming-mio-frame4C: url("../../../assets/prop/welcome/Mio\ gaming\ 4C.png");
+
+    --gaming-mio-frame5A: url("../../../assets/prop/welcome/Mio\ gaming\ 5A.png");
+    --gaming-mio-frame5B: url("../../../assets/prop/welcome/Mio\ gaming\ 5B.png");
+    --gaming-mio-frame5C: url("../../../assets/prop/welcome/Mio\ gaming\ 5C.png");
 }
+
 .mio.loading {
-    width: 200px;
+    width: 155px;
     height: 180px;
 
-    animation: loading-mio-animate 2s ease-in infinite;
-    background-size: cover;    
+    animation-duration: 8s;
+    animation-name: gaming-mio-loop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    background-size: cover;
 }
 
-@keyframes loading-mio-animate {
-    0% {
-        background-image: var(--loading-mio-frame1);
+@keyframes gaming-mio-loop {
+
+    /*frame 1*/
+    0%, 3% {
+        background-image: var(--gaming-mio-frame1A);
     }
-    49% {
-        background-image: var(--loading-mio-frame1);
+
+    /**/
+    4%, 6% {
+        background-image: var(--gaming-mio-frame1C);
     }
-    50% {
-        background-image: var(--loading-mio-frame2);
+
+    /**/
+    7%, 10% {
+        background-image: var(--gaming-mio-frame1A);
     }
-    100% {
-        background-image: var(--loading-mio-frame2);
+
+    /**/
+    11%, 20% {
+        background-image: var(--gaming-mio-frame1B);
+    }
+
+    /*frame 3.1*/
+    21%, 30% {
+        background-image: var(--gaming-mio-frame3A);
+    }
+
+    /**/
+    31%, 40% {
+        background-image: var(--gaming-mio-frame3B);
+    }
+
+    /*frame 4*/
+    41%, 43% {
+        background-image: var(--gaming-mio-frame4A);
+    }
+
+    /**/
+    44%, 46% {
+        background-image: var(--gaming-mio-frame4C);
+    }
+
+    /**/
+    47%, 50% {
+        background-image: var(--gaming-mio-frame4A);
+    }
+
+    /**/
+    51%, 60% {
+        background-image: var(--gaming-mio-frame4B);
+    }
+
+    /*frame 5*/
+    61%, 63% {
+        background-image: var(--gaming-mio-frame5A);
+    }
+
+    /**/
+    64%, 66% {
+        background-image: var(--gaming-mio-frame5C);
+    }
+
+    /**/
+    67%, 70% {
+        background-image: var(--gaming-mio-frame5A);
+    }
+
+    /**/
+    71%, 80% {
+        background-image: var(--gaming-mio-frame5B);
+    }
+
+    /*frame 3.2*/
+    81%, 90% {
+        background-image: var(--gaming-mio-frame3A);
+    }
+
+    /**/
+    91%, 100% {
+        background-image: var(--gaming-mio-frame3B);
     }
 }

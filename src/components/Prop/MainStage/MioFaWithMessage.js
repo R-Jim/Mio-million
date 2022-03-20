@@ -5,17 +5,28 @@ import './MioFaWithMessage.css'
 const message_border_colors = ["#e6e7e7", "#7b96d5", "#7b96d5", "#7b96d5", "#b20335"]
 
 class MioFaWithMessage extends Component {
-    getBorderColor = () => {
-        return message_border_colors[Math.floor(Math.random() * message_border_colors.length)]
+
+    getBorderBlinkTiming = () => {
+        return Math.floor(Math.random() * message_border_colors.length)
     }
+
+    getBorderColor = (index) => {
+        return message_border_colors[index]
+    }
+
 
     render() {
         const { message, isPreview } = this.props
-        const borderColor = this.getBorderColor()
+
+        const timing = this.getBorderBlinkTiming()
+        const animationDuration = timing / 4 + 10 + "s"
+        const borderColor = this.getBorderColor(timing)
         const boxShadow = "0 0 12px " + borderColor
+
         return (
-            <div className="miofa-with-message">
-                <div className={"message-container" + (message.length > 100 ? " big" : "")} style={{ borderColor, boxShadow }}>
+            <div className={"miofa-with-message" + (message.length > 100 ? " big" : "")}>
+                <div className="message-border" style={{ borderColor, boxShadow, animationDuration }} />
+                <div className="message-container">
                     {message}
                 </div>
                 <MioFa disablePop={true} isPreview={isPreview} />

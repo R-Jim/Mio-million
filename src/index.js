@@ -5,6 +5,10 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import store from './reducers'
+import { version, credits } from '../package.json';
+
+console.log("Version: " + version)
+console.log("Credits: " + credits)
 
 ReactDOM.render(
   <Provider store={store}>

@@ -7,7 +7,7 @@ class WelcomeMessage extends Component {
         return (
             <div className="welcome-message-container">
                 <div className="welcome-message">
-                    Happy 3rd Anniversary, Mio!!.
+                    Happy 1.000.000 Subscribers, Mio!!.
                 </div>
                 <div className="the-mion-family-tag">
                     The Mio-n Family~!
