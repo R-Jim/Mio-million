@@ -33,6 +33,7 @@ class SendMessage extends Component {
     state = {
         form,
         // form: test_form,
+        useCustomMioFa: false
     }
 
     renderPreviewMessageSection = () => {
@@ -96,8 +97,39 @@ class SendMessage extends Component {
         }
     }
 
+    handleUseCustomMioFa = () => {
+        const { useCustomMioFa } = this.state
+        this.setState({
+            useCustomMioFa: !useCustomMioFa,
+        })
+    }
+
+    renderForm = () => {
+        const { form: { email, message, name, myMioFa }, useCustomMioFa } = this.state
+        return (
+            <Form>
+                <Input type="text" title="Email" name="email" onChange={this.handleChange} value={email} placeholder="example@gmail.com" />
+                <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (20 characters max)" maxLength="20" />
+                <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
+                <Input type="checkbox" title="Custom MioFa" onChange={this.handleUseCustomMioFa} value={useCustomMioFa} />
+                {
+                    useCustomMioFa ? <Input type="multi" title="URLs" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="Frame" limit={2} />
+                        : <div />
+                }
+                <div className='action-container'>
+                    <input type="button" style={
+                        {
+                            margin: '5px',
+                        }
+                    } value="Submit" onClick={this.submitForm} />
+                    <input type="reset" value="Reset" onClick={this.resetForm} />
+
+                </div>
+            </Form>
+        )
+    }
+
     render() {
-        const { form: { email, message, name, myMioFa } } = this.state
         return (
             <div className="send-message-container">
                 <div className="mimic pagination-controller" />
@@ -105,14 +137,7 @@ class SendMessage extends Component {
                     <span>Preview</span>
                     {this.renderPreviewMessageSection()}
                 </div>
-                <Form>
-                    <Input type="text" title="Email" name="email" onChange={this.handleChange} value={email} placeholder="example@gmail.com" />
-                    <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (20 characters max)" maxLength="20" />
-                    <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
-                    <Input type="multi" title="Your MioFa" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="URL" limit={2} />
-                    <input type="button" value="Submit" onClick={this.submitForm} />
-                    <input type="reset" value="Reset" onClick={this.resetForm} />
-                </Form>
+                {this.renderForm()}
                 <Button link="/" text="To Stage" />
             </div>
         )

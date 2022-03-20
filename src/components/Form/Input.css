@@ -2,13 +2,22 @@
 
 .input span {
     float: right;
-    line-height: 41px;
+    margin-top: 12px;
+    margin-right: 10px;
+    max-width: calc(30% - 18px);    
+    text-align: right;
 }
 
 .input input, .input textarea {
     float: right;
-    margin-left: 10px;
     width: calc(70% - 18px);
     padding: 8px;
     border-radius: 8px;
+}
+
+.input input[type="checkbox"i] {
+    width: unset;
+    height: 60%;
+    margin-right: calc(70% - 13px);
+    margin-top: 15px;
 }

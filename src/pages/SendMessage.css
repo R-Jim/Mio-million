@@ -41,4 +41,18 @@
     .send-message-container .form-container {
         margin: 16px 0;
     }
+
+    .preview-container {
+        margin-top: 40px;
+        width: 310px;
+    }
+
+    .mimic {
+        display: none;
+    }
+}
+
+.action-container {
+    margin-left: -6%;
+    margin-right: 6%;
 }
