@@ -10,7 +10,7 @@
 .name-container {
     min-width: 90px;
     height: 20px;
-    z-index: 10;
+    z-index: 12;
     position: absolute;
     top: -40px;
     border: 6px solid transparent;

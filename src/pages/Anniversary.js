@@ -13,7 +13,11 @@ class Anniversary extends Component {
 
     renderStage = () => {
         const { mio, main } = this.state
-        return [mio, main]
+        return (
+            <div>
+                {mio} {main}
+            </div>
+        )
     }
 
     render() {

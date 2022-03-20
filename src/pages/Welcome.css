@@ -188,7 +188,36 @@
     position: absolute;
     border: 2px dashed #8b0517;
     box-shadow: 0 0 12px #b20c26;
+    animation: mio-info-panel-animation 6s linear infinite;
 }
+
+@keyframes mio-info-panel-animation {
+    0%, 80% {
+        border: 2px dashed #8b0517;
+        box-shadow: 0 0 12px #b20c26;
+    }
+
+    81% {
+        border: 2px dashed transparent;
+        box-shadow: 0 0 12px transparent;
+    }
+
+    82%, 83% {
+        border: 2px dashed #8b0517;
+        box-shadow: 0 0 12px #b20c26;
+    }
+
+    84% {
+        border: 2px dashed transparent;
+        box-shadow: 0 0 12px transparent;
+    }
+
+    85%, 100% {
+        border: 2px dashed #8b0517;
+        box-shadow: 0 0 12px #b20c26;
+    }
+}
+
 
 .mio-info-panel>span {
     font-size: 14px;
