@@ -11,14 +11,17 @@ class Anniversary extends Component {
         main: <MainStage />,
     }
 
-    render() {
+    renderStage = () => {
         const { mio, main } = this.state
+        return [mio, main]
+    }
+
+    render() {
         const { isReady, readyPage } = this.props
         return (
             <>
                 {isReady ? <div /> : <Welcome onFinished={readyPage} />}
-                {mio}
-                {main}
+                {this.renderStage()}
             </>
         )
     }
