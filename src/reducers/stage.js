@@ -1,11 +1,18 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import api from '../api'
+import messages from '../configs/messages'
 
 export const PAGE_SIZE = 5
 
 export const fetchMessages = createAsyncThunk('posts/fetchMessages', async ({ page, pageSize }) => {
-    const response = await api.getMessage({ page, pageSize })
-    return response
+    // TODO: uncomment when API is ready
+    // const response = await api.getMessage({ page, pageSize })
+    // return response
+    return {
+        page,
+        pageCount: 4,
+        pageData: messages,
+    }
 })
 
 const stageSlice = createSlice({
@@ -52,7 +59,7 @@ const stageSlice = createSlice({
 export const { nextPage, previousPage, readyPage } = stageSlice.actions
 
 
-export const getCurrentPageMessages = ({ messages: { items, current, pageSize } }) => items.slice(current - 1 * pageSize, current * pageSize)
+export const getCurrentPageMessages = ({ messages: { items, current, pageSize } }) => items.slice((current - 1) * pageSize, current * pageSize)
 
 export const getMessagesState = ({ messages }) => messages
 
