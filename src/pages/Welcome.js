@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Button, { Icon } from '../components/Navigation/Button'
 import Curtain from '../components/Prop/WelcomeStage/Curtain'
 import GameScreen from '../components/Prop/WelcomeStage/GameScreen'
 import LoadingBar from '../components/Prop/WelcomeStage/LoadingBar'
 import LoadingMio from '../components/Prop/WelcomeStage/LoadingMio'
 import WelcomeMessage from '../components/Prop/WelcomeStage/WelcomeMessage'
+import { getIsAssetLoaded, markAssetAsLoaded } from '../reducers/stage'
 import './Welcome.css'
 
 class Welcome extends Component {
@@ -12,7 +14,6 @@ class Welcome extends Component {
         isReady: false,
         isSet: false,
         isGo: false,
-        isFinished: false,
     }
 
     componentDidMount = () => {
@@ -26,13 +27,12 @@ class Welcome extends Component {
     }
 
     handleRemoveCurtain = () => {
+        const { markAssetAsLoaded } = this.props
         this.setState({
             isGo: true
         })
         setTimeout(() => {
-            this.setState({
-                isFinished: true
-            })
+            markAssetAsLoaded()
         }
             , 6000
         )
@@ -86,8 +86,9 @@ class Welcome extends Component {
     }
 
     render() {
-        const { isFinished, isGo } = this.state
-        if (isFinished) {
+        const { isGo } = this.state
+        const { isAssetLoaded } = this.props
+        if (isAssetLoaded) {
             return (
                 <div />
             )
@@ -96,4 +97,12 @@ class Welcome extends Component {
     }
 }
 
-export default Welcome
+const mapStateToProps = (state) => ({
+    isAssetLoaded: getIsAssetLoaded(state)
+})
+
+const mapDispatchToProps = {
+    markAssetAsLoaded,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome)

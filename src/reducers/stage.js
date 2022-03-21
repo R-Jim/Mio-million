@@ -24,7 +24,7 @@ const stageSlice = createSlice({
         items: [],
         status: 'idle',
         error: "",
-        isReady: false,
+        isAssetLoaded: false,
     },
     reducers: {
         nextPage: (state) => {
@@ -33,8 +33,8 @@ const stageSlice = createSlice({
         previousPage: (state) => {
             state.current -= 1
         },
-        readyPage: (state) => {
-            state.isReady = true
+        markAssetAsLoaded: (state) => {
+            state.isAssetLoaded = true
         }
     },
     extraReducers(builder) {
@@ -56,11 +56,13 @@ const stageSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { nextPage, previousPage, readyPage } = stageSlice.actions
+export const { nextPage, previousPage, markAssetAsLoaded } = stageSlice.actions
 
 
 export const getCurrentPageMessages = ({ messages: { items, current, pageSize } }) => items.slice((current - 1) * pageSize, current * pageSize)
 
 export const getMessagesState = ({ messages }) => messages
+
+export const getIsAssetLoaded = ({ messages }) => messages.isAssetLoaded
 
 export default stageSlice

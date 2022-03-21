@@ -15,6 +15,7 @@
     margin: 20px 50%;
     position: absolute;
     bottom: 5px;
+    right: -70px;
     margin-left: calc(50% - 60px);
 }
 
