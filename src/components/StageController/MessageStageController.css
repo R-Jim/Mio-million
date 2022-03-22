@@ -9,10 +9,28 @@
     background-position: center;
     color: white;
     padding: 15px 0;
+    align-items: center;
+}
+
+.total-display>span {
+    color: white;
+    font-size: large;
 }
 
 .total-display {
     min-width: 100px;
     padding: 0 10px;
-    line-height: 55px;
+    line-height: 31px;
+    height: 35px;
+    border: 6px solid transparent;
+    border-image: linear-gradient(to top, #161245b6, #4d4fafa8) 30 stretch;
+    border-image-slice: 1;
+    background-color: #0b111c;
+    color: #ffffffd1;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 0 0 2px white;
+    margin: 0 5px;
+    word-spacing: 2px;
 }
