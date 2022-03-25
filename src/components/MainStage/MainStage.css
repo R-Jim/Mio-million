@@ -4,5 +4,10 @@
     background-color: #0b111c;
     background-image: url("../../assets/stages/main/tile.png");
     background-position: center 188px;
-    padding-bottom: 50px;
+}
+
+@media (max-width: 712px) {
+    .main-stage-container {
+        padding-bottom: 50px;
+    }
 }
