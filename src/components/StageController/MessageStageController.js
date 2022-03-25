@@ -15,7 +15,7 @@ class MessageStageController extends Component {
         }
         nextPage()
     }
-    
+
     render() {
         const { previousPage } = this.props
         const { configState: { current, pageCount } } = this.props
@@ -24,7 +24,7 @@ class MessageStageController extends Component {
             <div className="pagination-controller">
                 <Button className="previous" disabled={current === 1} onClick={() => previousPage()} />
                 <div className="total-display">
-                    {current}/{pageCount}
+                    Page <span>{current}</span> of {pageCount}
                 </div>
                 <Button className="next" disabled={current >= pageCount} onClick={() => this.nextPageHandler()} />
             </div>
