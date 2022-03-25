@@ -274,3 +274,6 @@
         width: 295px;
     }
 }
+.welcome-action .navigation-button {
+    opacity: 1;
+}

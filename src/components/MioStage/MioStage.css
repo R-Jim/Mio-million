@@ -2,8 +2,6 @@
     width: 100%;
     height: 467px;
     position: relative;
-    background-image: url("../../assets/stages/mio/background.jpg");
-    background-size: contain;
 }
 
 .mio-stage {
