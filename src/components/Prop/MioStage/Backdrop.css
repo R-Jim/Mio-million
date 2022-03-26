@@ -1,0 +1,48 @@
+.backdrop {
+    width: 100%;
+    height: 467px;
+    position: relative;
+}
+
+.backdrop-play-logo-container {
+    position: absolute;
+    width: 1000px;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 24%;
+}
+
+.backdrop-play-logo-container>.backdrop-play-logo {
+    position: absolute;
+    animation: backdrop-play-logo-blink-animation 8s infinite ease,
+        backdrop-play-logo-move-animation 6s infinite ease-in;
+    bottom: -20%;
+}
+
+@keyframes backdrop-play-logo-move-animation {
+    0% {
+        transform: translateY(0%);
+    }
+
+    95% {
+        transform: translateY(-100%) rotate(360deg);
+    }
+
+    96%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes backdrop-play-logo-blink-animation {
+    0%, 10% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .8;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,8 @@
+.backdrop-play-logo {
+    background-image: url("../../../assets/stages/mio/play.png");
+    width: 28px;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-size: 28px 36px;
+    background-position: center;
+}

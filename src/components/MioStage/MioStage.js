@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import Backdrop from '../Prop/MioStage/Backdrop'
 import Mio from '../Prop/MioStage/Mio'
 import './MioStage.css'
 
 class MioStage extends Component {
     render() {
         return (
-            <div className="mio-stage-backdrop">
+            <Backdrop>
                 <div className="mio-stage">
                     <Mio />
                 </div>
-            </div>
+            </Backdrop>
         )
     }
 }
