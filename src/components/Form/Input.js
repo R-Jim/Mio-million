@@ -14,7 +14,7 @@ class Input extends Component {
             default:
                 return (
                     <label className="input">
-                        <input type={type} name={name} value={value ?? ""} onChange={onChange} placeholder={placeholder} {...other} />
+                        <input className={type == "checkbox" ? "checkbox" : ""} type={type} name={name} value={value ?? ""} onChange={onChange} placeholder={placeholder} {...other} />
                         <span>{title}:</span>
                     </label>
                 )

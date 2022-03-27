@@ -4,8 +4,15 @@
     float: right;
     margin-top: 12px;
     margin-right: 10px;
-    max-width: calc(30% - 18px);    
+    max-width: calc(30% - 18px);
     text-align: right;
+}
+
+.input .checkbox {
+    width: unset;
+    height: 60%;
+    margin-right: calc(70% - 13px);
+    margin-top: 15px;
 }
 
 .input input, .input textarea {
@@ -13,11 +20,4 @@
     width: calc(70% - 18px);
     padding: 8px;
     border-radius: 8px;
-}
-
-.input input[type="checkbox"i] {
-    width: unset;
-    height: 60%;
-    margin-right: calc(70% - 13px);
-    margin-top: 15px;
 }
