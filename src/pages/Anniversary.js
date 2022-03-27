@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import MioStage from '../components/MioStage/MioStage'
 import MainStage from '../components/MainStage/MainStage'
 import Welcome from './Welcome'
+import { connect } from 'react-redux'
+import { getIsAssetLoaded } from '../reducers/stage'
 
 class Anniversary extends Component {
     state = {
@@ -10,9 +12,10 @@ class Anniversary extends Component {
     }
 
     renderStage = () => {
+        const { isAssetLoaded } = this.props
         const { mio, main } = this.state
         return (
-            <div>
+            <div style={isAssetLoaded ? {} : { height: '100vh', overflow: 'hidden' }}>
                 {mio} {main}
             </div>
         )
@@ -29,5 +32,7 @@ class Anniversary extends Component {
 }
 
 
-
-export default Anniversary
+const mapStateToProps = (state) => ({
+    isAssetLoaded: getIsAssetLoaded(state)
+})
+export default connect(mapStateToProps)(Anniversary)
