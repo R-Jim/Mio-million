@@ -40,8 +40,8 @@
     position: absolute;
     top: 3px;
     right: -20px;
-    -webkit-transform: rotate(340deg);
     transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
 }
 
 @media (max-width: 712px) {
