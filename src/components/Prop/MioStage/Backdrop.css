@@ -46,3 +46,10 @@
         opacity: 0;
     }
 }
+
+@media (max-width: 1322px) {
+    .backdrop-play-logo-container {
+        width: 100%;
+        margin: 0;
+    }
+}

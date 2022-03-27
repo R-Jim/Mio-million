@@ -4,6 +4,7 @@
     background-color: #0b111c;
     background-image: url("../../assets/stages/main/tile.png");
     background-position: center 188px;
+    overflow: hidden;
 }
 
 @media (max-width: 712px) {

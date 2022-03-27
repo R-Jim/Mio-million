@@ -46,7 +46,7 @@ class MioFa extends Component {
     }
 
     getMiofaClass = () => {
-        const miofaClasses = ["normal", "normal", "normal", "normal", "normal", "headband"]
+        const miofaClasses = ["normal", "normal", "normal", "normal", "normal", "headband", "lightstick"]
         return miofaClasses[Math.floor(Math.random() * miofaClasses.length)]
     }
 

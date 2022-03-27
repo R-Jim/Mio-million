@@ -3,6 +3,8 @@
     --miofa-frame2: url("../../../assets/prop/fan/MiochunRig2.png");
     --miofa-headband-frame1: url("../../../assets/prop/fan/MiochunRig-HeadBand.png");
     --miofa-headband-frame2: url("../../../assets/prop/fan/MiochunRig-HeadBand2.png");
+    --miofa-lightstick-frame1: url("../../../assets/prop/fan/MiochunRig-LightStick.png");
+    --miofa-lightstick-frame2: url("../../../assets/prop/fan/MiochunRig-LightStick2.png");
 }
 
 .miofa-container {
@@ -74,6 +76,10 @@
     animation-name: miofa-headband-animate;
 }
 
+.miofa.lightstick {
+    animation-name: miofa-lightstick-animate;
+}
+
 @keyframes miofa-normal-animate {
     0% {
         background-image: var(--miofa-frame1);
@@ -110,6 +116,25 @@
         background-image: var(--miofa-headband-frame2);
     }
 }
+
+@keyframes miofa-lightstick-animate {
+    0% {
+        background-image: var(--miofa-lightstick-frame1);
+    }
+
+    49% {
+        background-image: var(--miofa-lightstick-frame1);
+    }
+
+    50% {
+        background-image: var(--miofa-lightstick-frame2);
+    }
+
+    100% {
+        background-image: var(--miofa-lightstick-frame2);
+    }
+}
+
 
 .debug-indicator {
     position: absolute;
