@@ -41,7 +41,6 @@
     top: 3px;
     right: -20px;
     transform: rotate(340deg);
-    -webkit-transform: rotate(340deg);
 }
 
 @media (max-width: 712px) {
