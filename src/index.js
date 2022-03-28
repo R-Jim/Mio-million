@@ -9,6 +9,7 @@ import { version, credits } from '../package.json';
 
 console.log("Version: " + version)
 console.log("Credits: " + credits)
+console.log("Github: https://github.com/R-Jim/Mio-million")
 
 ReactDOM.render(
   <Provider store={store}>

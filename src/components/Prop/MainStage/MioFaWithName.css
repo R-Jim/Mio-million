@@ -14,7 +14,8 @@
     position: absolute;
     top: -40px;
     border: 6px solid transparent;
-    border-image: linear-gradient(to top, #161245b6 , #4d4fafa8) 30 stretch;
+    border-image: linear-gradient(to top, #161245b6, #4d4fafa8) 30 stretch;
+    -webkit-border-image: linear-gradient(to top, #161245b6, #4d4fafa8) 30 stretch;
     border-image-slice: 1;
     background-color: #0b111c;
     color: white;
@@ -25,6 +26,6 @@
     text-shadow: 0 0 2px white;
 }
 
-.miofa-with-name > .miofa {
+.miofa-with-name>.miofa {
     z-index: 0;
 }
