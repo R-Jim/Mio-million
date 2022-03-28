@@ -22,7 +22,7 @@
     padding: 0 10px;
     line-height: 31px;
     height: 35px;
-    border: 6px solid transparent;
+    border: 6px solid #4d4fafa8;
     border-image: linear-gradient(to top, #161245b6, #4d4fafa8) 30 stretch;
     border-image-slice: 1;
     background-color: #0b111c;

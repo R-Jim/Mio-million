@@ -20,9 +20,9 @@ export class Backdrop extends Component {
         }
 
         // main batch
-        for (let i = 0; i < maxRow - 2; i++) {
-            const left = 80 / maxRow * i + 10 + "%"
-            const blinkTick = Math.floor(Math.random() * 2) + 8 + "s"
+        for (let i = 0; i < maxRow - 4; i++) {
+            const left = 80 / maxRow * i + 20 + "%"
+            const blinkTick = Math.floor(Math.random() * 4) + 4 + "s"
             const moveTick = Math.floor(Math.random() * 8) + 10 + "s"
             playLogos.push(
                 <BackdropPlayLogo key={i} style={{
