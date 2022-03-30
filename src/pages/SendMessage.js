@@ -122,7 +122,8 @@ class SendMessage extends Component {
                 {
                     useCustomMioFa ? [
                         <div className='notes'>
-                            <p>- Sample MioFa assets <a key='miofaAssets' href={MioFaAssets}>Here</a></p>
+                            <p>- Sample MioFa assets <a key='miofaAssets' href={MioFaAssets}>HERE</a>.</p>
+                            <p>- Upload your image to an online hosting service (or Twitter), and paste the image address to the URLs below</p>
                         </div>,
                         <Input key='customMioFaFrames' type="multi" title="URLs" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="Frame" limit={2} />,
                     ]
