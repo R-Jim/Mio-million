@@ -7,6 +7,7 @@ import Button from '../components/Navigation/Button'
 import MessageSection from '../components/Section/MessageSection'
 import { sendMessages } from '../reducers/form'
 import './SendMessage.css'
+import MioFaAssets from '../assets/Miofa\ assets.rar'
 
 // const test_form = {
 //     email: "test_mail@gmail.com",
@@ -66,7 +67,8 @@ class SendMessage extends Component {
                 myMioFa: {
                     frames: [],
                 }
-            }
+            },
+            useCustomMioFa: false
         })
     }
 
@@ -108,12 +110,22 @@ class SendMessage extends Component {
         const { form: { email, message, name, myMioFa }, useCustomMioFa } = this.state
         return (
             <Form>
-                <Input type="text" title="Email" name="email" onChange={this.handleChange} value={email} placeholder="example@gmail.com" />
-                <Input type="text" title="Name" name="name" onChange={this.handleChange} value={name} placeholder="Name (20 characters max)" maxLength="20" />
-                <Input type="textarea" title="Message" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
-                <Input type="checkbox" title="Custom MioFa" onChange={this.handleUseCustomMioFa} value={useCustomMioFa} />
+                <div className='notes'>
+                    <p>- Email to identify the sender, won't be displayed on the website</p>
+                    <p>- (*) fields are required</p>
+                    <p>- Submission will be avaible after Mio passes 970k subscribers</p>
+                </div>
+                <Input type="text" title="Email(*)" name="email" onChange={this.handleChange} value={email} placeholder="mfa@mail.co (only 1 email/message)" />
+                <Input type="text" title="Name(*)" name="name" onChange={this.handleChange} value={name} placeholder="- MioFa - (20 characters max)" maxLength="20" />
+                <Input type="textarea" title="Message(*)" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
+                <Input type="checkbox" title="Custom MioFa" onChange={this.handleUseCustomMioFa} checked={useCustomMioFa} />
                 {
-                    useCustomMioFa ? <Input type="multi" title="URLs" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="Frame" limit={2} />
+                    useCustomMioFa ? [
+                        <div className='notes'>
+                            <p>- Sample MioFa assets <a key='miofaAssets' href={MioFaAssets}>Here</a></p>
+                        </div>,
+                        <Input key='customMioFaFrames' type="multi" title="URLs" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="Frame" limit={2} />,
+                    ]
                         : <div />
                 }
                 <div className='action-container'>
@@ -121,11 +133,11 @@ class SendMessage extends Component {
                         {
                             margin: '5px',
                         }
-                    } value="Submit" onClick={this.submitForm} />
+                    } value="Submit" disabled onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />
 
                 </div>
-            </Form>
+            </Form >
         )
     }
 
