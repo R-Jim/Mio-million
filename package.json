@@ -1,8 +1,8 @@
 {
-  "name": "Mio-anniversary",
+  "name": "mio-million",
   "version": "0.6.4-BETA",
   "private": true,
-  "homepage": "https://anniv3.miosha.moe/",
+  "homepage": "https://million.miosha.moe/",
   "credits": "Thiago (BE, Domain), Crois & Mat (Main Stage & Mio chun assets), The Mion~n Family~!, R-Jim (FE) and You",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
