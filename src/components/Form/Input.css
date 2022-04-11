@@ -2,7 +2,7 @@
 
 .input span {
     float: right;
-    margin-top: 12px;
+    margin-top: 10px;
     margin-right: 10px;
     max-width: calc(30% - 18px);
     text-align: right;
@@ -16,6 +16,13 @@
 }
 
 .input input, .input textarea {
+    float: right;
+    width: calc(70% - 18px);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.input a {
     float: right;
     width: calc(70% - 18px);
     padding: 8px;

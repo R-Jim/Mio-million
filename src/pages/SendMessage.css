@@ -56,3 +56,17 @@
     margin-left: -6%;
     margin-right: 6%;
 }
+
+.notes {
+    width: 80%;
+    margin-left: -6%;
+    margin-right: 6%;
+}
+
+.notes p {
+    text-align: start;
+}
+
+.notes a {
+    color: white;
+}
