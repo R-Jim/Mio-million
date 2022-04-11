@@ -113,17 +113,17 @@ class SendMessage extends Component {
                 <div className='notes'>
                     <p>- Email to identify the sender, won't be displayed on the website</p>
                     <p>- (*) fields are required</p>
-                    <p>- Submission will be avaible after Mio passes 970k subscribers</p>
+                    <p>- You can only submit 1 message per day so please check everything carefully</p>
                 </div>
                 <Input type="text" title="Email(*)" name="email" onChange={this.handleChange} value={email} placeholder="mfa@mail.co (only 1 email/message)" />
                 <Input type="text" title="Name(*)" name="name" onChange={this.handleChange} value={name} placeholder="- MioFa - (20 characters max)" maxLength="20" />
                 <Input type="textarea" title="Message(*)" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
-                <Input type="checkbox" title="Custom MioFa" onChange={this.handleUseCustomMioFa} checked={useCustomMioFa} />
+                <Input type="checkbox" title="Customize Miochun" onChange={this.handleUseCustomMioFa} checked={useCustomMioFa} />
                 {
                     useCustomMioFa ? [
                         <div className='notes'>
                             <p>- Sample MioFa assets <a key='miofaAssets' href={MioFaAssets}>HERE</a>.</p>
-                            <p>- Upload your image to an online hosting service (or Twitter), and paste the image address to the URLs below</p>
+                            <p>- Upload your image to an online hosting service (or Twitter), and paste the image address to the URL fields below</p>
                         </div>,
                         <Input key='customMioFaFrames' type="multi" title="URLs" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="Frame" limit={2} />,
                     ]
@@ -134,7 +134,7 @@ class SendMessage extends Component {
                         {
                             margin: '5px',
                         }
-                    } value="Submit" disabled onClick={this.submitForm} />
+                    } value="Submit" onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />
 
                 </div>
