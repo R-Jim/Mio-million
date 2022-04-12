@@ -33,9 +33,7 @@ const sendMessage = ({ name, email, frames, message }) => fetch(API_URL + "messa
         "content": message
     })
 }).then(({ status }) => {
-    if (status === 201) {
-        NotificationManager.success('Message submitted. We will review it shortly.');
-    } else if (status === 409) {
+    if (status === 409) {
         NotificationManager.warning('There is already a message with the given author name or email');
     } else if (status === 429) {
         NotificationManager.warning('You already submitted a message. Please try again later');

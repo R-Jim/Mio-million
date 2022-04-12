@@ -5,7 +5,7 @@ import Form from '../components/Form/Form'
 import Input from '../components/Form/Input'
 import Button from '../components/Navigation/Button'
 import MessageSection from '../components/Section/MessageSection'
-import { sendMessages } from '../reducers/form'
+import { getFormStatus, sendMessages } from '../reducers/form'
 import './SendMessage.css'
 import MioFaAssets from '../assets/Miofa\ assets.rar'
 
@@ -39,8 +39,9 @@ class SendMessage extends Component {
 
     renderPreviewMessageSection = () => {
         const { form: { message, name, myMioFa } } = this.state
+        const isSubmitSuccess = this.isSubmitSuccess()
         return (
-            <MessageSection message={message} name={name} isPreview={true} frames={myMioFa.frames} />
+            <MessageSection message={isSubmitSuccess ? "Thank you!!!" : message} name={isSubmitSuccess ? "- The Mio-on Family -" : name} isPreview={true} frames={myMioFa.frames} />
         )
     }
 
@@ -142,6 +143,19 @@ class SendMessage extends Component {
         )
     }
 
+    renderSuccessForm = () => {
+        return (
+            <div className='success-form'>
+                Thank you for the submission. We have received your message, and will review it shortly.
+            </div>
+        )
+    }
+
+    isSubmitSuccess = () => {
+        const { submissionStatus } = this.props
+        return submissionStatus === 201
+    }
+
     render() {
         return (
             <div className="send-message-container">
@@ -150,16 +164,19 @@ class SendMessage extends Component {
                     <span>Preview</span>
                     {this.renderPreviewMessageSection()}
                 </div>
-                {this.renderForm()}
+                {this.isSubmitSuccess() ? this.renderSuccessForm() : this.renderForm()}
                 <Button link="/" text="To Stage" />
             </div>
         )
     }
 }
 
+const mapStateToProps = (state) => ({
+    submissionStatus: getFormStatus(state)
+})
 
 const mapDispatchToProps = {
     sendMessages,
 }
 
-export default connect(null, mapDispatchToProps)(SendMessage)
+export default connect(mapStateToProps, mapDispatchToProps)(SendMessage)
