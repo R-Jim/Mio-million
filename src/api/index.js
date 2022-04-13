@@ -39,7 +39,7 @@ const sendMessage = ({ name, email, frames, message }) => fetch(API_URL + "messa
     } else if (status === 429) {
         NotificationManager.warning('You already submitted a message. Please try again later');
     } else {
-        NotificationManager.error('ERROR[' + status + '] Please contact vucuongJim@gmail.com or R Jim#1231');
+        NotificationManager.error('ERROR[' + status + '] Please contact vucuongJim@gmail.com or R Jim#4545');
     }
     return ({ status })
 });
