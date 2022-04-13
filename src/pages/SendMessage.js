@@ -5,7 +5,7 @@ import Form from '../components/Form/Form'
 import Input from '../components/Form/Input'
 import Button from '../components/Navigation/Button'
 import MessageSection from '../components/Section/MessageSection'
-import { getFormStatus, sendMessages } from '../reducers/form'
+import { getFormStatus, isFormLoading, sendMessages } from '../reducers/form'
 import './SendMessage.css'
 import MioFaAssets from '../assets/Miofa\ assets.rar'
 
@@ -108,6 +108,7 @@ class SendMessage extends Component {
     }
 
     renderForm = () => {
+        const { isFormLoading } = this.props
         const { form: { email, message, name, myMioFa }, useCustomMioFa } = this.state
         return (
             <Form>
@@ -131,7 +132,7 @@ class SendMessage extends Component {
                         : <div />
                 }
                 <div className='action-container'>
-                    <input type="button" style={
+                    <input type="button" disabled={isFormLoading} style={
                         {
                             margin: '5px',
                         }
@@ -172,7 +173,8 @@ class SendMessage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    submissionStatus: getFormStatus(state)
+    submissionStatus: getFormStatus(state),
+    isFormLoading: isFormLoading(state)
 })
 
 const mapDispatchToProps = {

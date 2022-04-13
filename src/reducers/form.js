@@ -29,4 +29,6 @@ const formSlice = createSlice({
 
 export const getFormStatus = ({ form }) => form.submitStatus
 
+export const isFormLoading = ({ form }) => form.status === 'loading'
+
 export default formSlice
