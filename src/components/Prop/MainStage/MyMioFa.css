@@ -3,6 +3,7 @@
     margin-top: -30px;
     position: relative;
     animation-timing-function: linear;
+    z-index: 99;
 }
 
 
