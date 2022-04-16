@@ -5,14 +5,13 @@ import messages from '../configs/messages'
 export const PAGE_SIZE = 5
 
 export const fetchMessages = createAsyncThunk('posts/fetchMessages', async ({ page, pageSize }) => {
-    // TODO: uncomment when API is ready
-    // const response = await api.getMessage({ page, pageSize })
-    // return response
-    return {
-        page,
-        pageCount: 4,
-        pageData: messages,
-    }
+    const response = await api.getMessage({ page, pageSize })
+    return response
+    // return {
+    //     page,
+    //     pageCount: 4,
+    //     pageData: messages,
+    // }
 })
 
 const stageSlice = createSlice({
