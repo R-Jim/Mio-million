@@ -17,7 +17,7 @@ class MessageLayoutBuilder extends LayoutBuilder {
         } else {
             section = this.getDefaultSection(key)
         }
-        return { ...section, key: index }
+        return { ...section, key: index, props: { ...section.props, index } }
     }
 }
 
