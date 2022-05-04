@@ -16,16 +16,16 @@ class MessageSection extends Component {
     }
 
     render() {
-        const { message = "Your messages for Mio.", name = "- MioFa -", frames = [], isPreview }
+        const { message = "Your messages for Mio.", name = "- MioFa -", frames = [], isPreview, index = 0 }
             = this.props
         return (
             <div className="message-section-container">
                 {/* 3x4 */}
                 {this.renderMioFas(5)}
-                <MioFaWithMessage message={message} isPreview={isPreview} />
+                <MioFaWithMessage message={message} isPreview={isPreview} index={index} />
                 {this.renderMioFas(2)}
-                <MyMioFa frames={frames} />
-                <MioFaWithName name={name} isPreview={isPreview} />
+                <MyMioFa frames={frames} index={index} />
+                <MioFaWithName name={name} isPreview={isPreview} index={index} />
                 {this.renderMioFas(1)}
             </div>
         )

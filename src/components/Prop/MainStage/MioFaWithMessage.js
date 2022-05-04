@@ -16,7 +16,7 @@ class MioFaWithMessage extends Component {
 
 
     render() {
-        const { message, isPreview } = this.props
+        const { message, isPreview, index=0 } = this.props
 
         const timing = this.getBorderBlinkTiming()
         const animationDuration = timing / 4 + 10 + "s"
@@ -25,8 +25,8 @@ class MioFaWithMessage extends Component {
 
         return (
             <div className={"miofa-with-message" + (message.length > 100 ? " big" : "")}>
-                <div className="message-border" style={{ borderColor, boxShadow, animationDuration }} />
-                <div className="message-container">
+                <div className="message-border" style={{ borderColor, boxShadow, animationDuration, zIndex: 11 + index }} />
+                <div className="message-container" style={{zIndex: 10 + index}}>
                     {message}
                 </div>
                 <MioFa disablePop={true} isPreview={isPreview} />

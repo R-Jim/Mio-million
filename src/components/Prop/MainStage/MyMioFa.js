@@ -125,8 +125,10 @@ class MyMioFa extends Component {
             animationDelay: "0s"
         }
 
+        const { index = 0 } = this.props
+
         return (
-            <div className="my-miofa-container" style={animationConfig} onLoad={this.check}>
+            <div className="my-miofa-container" style={{ ...animationConfig, zIndex: 12 + index }} onLoad={this.check}>
                 {this.renderFrames()}
             </div>
         )
