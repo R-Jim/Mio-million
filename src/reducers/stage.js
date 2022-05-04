@@ -10,7 +10,7 @@ export const fetchMessages = createAsyncThunk('posts/fetchMessages', async ({ pa
     // return {
     //     page,
     //     pageCount: 4,
-    //     pageData: messages,
+    //     pageData: messages.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
     // }
 })
 
@@ -45,7 +45,7 @@ const stageSlice = createSlice({
                 state.status = 'succeeded'
                 state.current = page
                 state.pageCount = pageCount
-                state.items = state.items.concat(pageData)
+                state.items.splice((page - 1) * state.pageSize, state.pageSize, ...pageData)
             })
             .addCase(fetchMessages.rejected, (state, action) => {
                 state.status = 'failed'
