@@ -5,7 +5,7 @@ import Form from '../components/Form/Form'
 import Input from '../components/Form/Input'
 import Button from '../components/Navigation/Button'
 import MessageSection from '../components/Section/MessageSection'
-import { sendMessages } from '../reducers/form'
+import { getFormStatus, isFormLoading, sendMessages } from '../reducers/form'
 import './SendMessage.css'
 import MioFaAssets from '../assets/Miofa\ assets.rar'
 
@@ -39,8 +39,9 @@ class SendMessage extends Component {
 
     renderPreviewMessageSection = () => {
         const { form: { message, name, myMioFa } } = this.state
+        const isSubmitSuccess = this.isSubmitSuccess()
         return (
-            <MessageSection message={message} name={name} isPreview={true} frames={myMioFa.frames} />
+            <MessageSection message={isSubmitSuccess ? "Thank you!!!" : message} name={isSubmitSuccess ? "- The Mio-on Family -" : name} isPreview={true} frames={myMioFa.frames} />
         )
     }
 
@@ -107,39 +108,53 @@ class SendMessage extends Component {
     }
 
     renderForm = () => {
+        const { isFormLoading } = this.props
         const { form: { email, message, name, myMioFa }, useCustomMioFa } = this.state
         return (
             <Form>
                 <div className='notes'>
                     <p>- Email to identify the sender, won't be displayed on the website</p>
                     <p>- (*) fields are required</p>
-                    <p>- Submission will be avaible after Mio passes 970k subscribers</p>
+                    <p>- You can only submit 1 message per day so please check everything carefully</p>
                 </div>
                 <Input type="text" title="Email(*)" name="email" onChange={this.handleChange} value={email} placeholder="mfa@mail.co (only 1 email/message)" />
                 <Input type="text" title="Name(*)" name="name" onChange={this.handleChange} value={name} placeholder="- MioFa - (20 characters max)" maxLength="20" />
                 <Input type="textarea" title="Message(*)" name="message" onChange={this.handleChange} value={message} placeholder="Your messages for Mio. (200 characters max)" rows="8" maxLength="200" style={{ resize: "none" }} />
-                <Input type="checkbox" title="Custom MioFa" onChange={this.handleUseCustomMioFa} checked={useCustomMioFa} />
+                <Input type="checkbox" title="Customize Miochun" onChange={this.handleUseCustomMioFa} checked={useCustomMioFa} />
                 {
                     useCustomMioFa ? [
                         <div className='notes'>
                             <p>- Sample MioFa assets <a key='miofaAssets' href={MioFaAssets}>HERE</a>.</p>
-                            <p>- Upload your image to an online hosting service (or Twitter), and paste the image address to the URLs below</p>
+                            <p>- Upload your image to an online hosting service (or Twitter), and paste the image address to the URL fields below</p>
                         </div>,
                         <Input key='customMioFaFrames' type="multi" title="URLs" name="myMioFa.frames" value={myMioFa.frames} onChange={this.handleChange} placeholder="Frame" limit={2} />,
                     ]
                         : <div />
                 }
                 <div className='action-container'>
-                    <input type="button" style={
+                    <input type="button" disabled={isFormLoading} style={
                         {
                             margin: '5px',
                         }
-                    } value="Submit" disabled onClick={this.submitForm} />
+                    } value="Submit" onClick={this.submitForm} />
                     <input type="reset" value="Reset" onClick={this.resetForm} />
 
                 </div>
             </Form >
         )
+    }
+
+    renderSuccessForm = () => {
+        return (
+            <div className='success-form'>
+                Thank you for the submission. We have received your message, and will review it shortly.
+            </div>
+        )
+    }
+
+    isSubmitSuccess = () => {
+        const { submissionStatus } = this.props
+        return submissionStatus === 201
     }
 
     render() {
@@ -150,16 +165,20 @@ class SendMessage extends Component {
                     <span>Preview</span>
                     {this.renderPreviewMessageSection()}
                 </div>
-                {this.renderForm()}
+                {this.isSubmitSuccess() ? this.renderSuccessForm() : this.renderForm()}
                 <Button link="/" text="To Stage" />
             </div>
         )
     }
 }
 
+const mapStateToProps = (state) => ({
+    submissionStatus: getFormStatus(state),
+    isFormLoading: isFormLoading(state)
+})
 
 const mapDispatchToProps = {
     sendMessages,
 }
 
-export default connect(null, mapDispatchToProps)(SendMessage)
+export default connect(mapStateToProps, mapDispatchToProps)(SendMessage)

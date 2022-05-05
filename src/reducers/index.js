@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import StageSlice, { fetchMessages, PAGE_SIZE } from './stage'
+import FormSlice from './form'
 
 const store = configureStore({
     reducer: {
-        messages: StageSlice.reducer
+        messages: StageSlice.reducer,
+        form: FormSlice.reducer
     },
 })
 

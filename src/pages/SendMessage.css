@@ -28,8 +28,16 @@
     border-radius: 5px 5px 0px 0px;
 }
 
-.send-message-container .form-container {
+.send-message-container .form-container,.send-message-container .success-form {
     width: 340px;
+}
+
+.success-form {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fbfffb;
 }
 
 .mimic {

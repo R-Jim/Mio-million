@@ -5,14 +5,13 @@ import messages from '../configs/messages'
 export const PAGE_SIZE = 5
 
 export const fetchMessages = createAsyncThunk('posts/fetchMessages', async ({ page, pageSize }) => {
-    // TODO: uncomment when API is ready
-    // const response = await api.getMessage({ page, pageSize })
-    // return response
-    return {
-        page,
-        pageCount: 4,
-        pageData: messages,
-    }
+    const response = await api.getMessage({ page, pageSize })
+    return response
+    // return {
+    //     page,
+    //     pageCount: 4,
+    //     pageData: messages.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    // }
 })
 
 const stageSlice = createSlice({
@@ -46,7 +45,7 @@ const stageSlice = createSlice({
                 state.status = 'succeeded'
                 state.current = page
                 state.pageCount = pageCount
-                state.items = state.items.concat(pageData)
+                state.items.splice((page - 1) * state.pageSize, state.pageSize, ...pageData)
             })
             .addCase(fetchMessages.rejected, (state, action) => {
                 state.status = 'failed'
