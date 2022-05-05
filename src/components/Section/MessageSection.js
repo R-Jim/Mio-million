@@ -15,11 +15,32 @@ class MessageSection extends Component {
         return Array.from(Array(number)).map(this.renderMioFa)
     }
 
+    getMessageSize = () => {
+        const { message } = this.props
+        let messageSize = 0
+        message.split("").forEach(character => {
+            if (character.match('[a-zA-Z0-9\!\ \&\.\,\-\~\\\']')) {
+                messageSize++
+            } else {
+                // console.log("'" + character + "'");
+                messageSize += 2.5
+            }
+        })
+        console.log(messageSize);
+        if (messageSize < 70) {
+            return ""
+        } else if (messageSize < 190) {
+            return "big"
+        } else {
+            return "extra-big"
+        }
+    }
+
     render() {
         const { message = "Your messages for Mio.", name = "- MioFa -", frames = [], isPreview, index = 0 }
             = this.props
         return (
-            <div className="message-section-container">
+            <div className={"message-section-container " + this.getMessageSize()}>
                 {/* 3x4 */}
                 {this.renderMioFas(5)}
                 <MioFaWithMessage message={message} isPreview={isPreview} index={index} />
