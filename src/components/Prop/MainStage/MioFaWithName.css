@@ -24,6 +24,16 @@
     text-shadow: 0 0 2px white;
 }
 
+.big .name-container {
+    left: 10px;
+}
+
+.extra-big .name-container {
+    top: -15px;
+    min-width: 120px;
+    left: -15px;
+}
+
 .miofa-with-name>.miofa {
     z-index: 0;
 }
