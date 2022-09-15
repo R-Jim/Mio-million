@@ -62,7 +62,7 @@ class MyMioFa extends Component {
             return defaultFrames
         }
         // update url when move to offline
-        return frames.map(frame =>{ const a = frame.replace("https://assets.miosha.moe/million", "/miofa"); console.log(a); return a})
+        return frames.map(frame => frame.replace("https://assets.miosha.moe/million", "/miofa"))
     }
 
     getNextFrameIndex = () => {
