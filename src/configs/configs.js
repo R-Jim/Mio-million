@@ -1,9 +1,15 @@
+import { PAGE_SIZE } from "../reducers/stage"
+
 export const SECTION_RESOLUTION = {
     _4x3: "4x3",
 }
 
 export const LAYOUTS = [
-    [
-        SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3, SECTION_RESOLUTION._4x3
-    ],
+    (() => {
+        const section = []
+        for (let i = 0; i < PAGE_SIZE; i++) {
+            section.push(SECTION_RESOLUTION._4x3)
+        }
+        return section
+    })(),
 ]

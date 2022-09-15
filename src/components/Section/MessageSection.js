@@ -16,17 +16,20 @@ class MessageSection extends Component {
     }
 
     getMessageSize = () => {
-        const { message } = this.props
+        let { message } = this.props
+        if (message == null) {
+            message = ""
+        }
         let messageSize = 0
         message.split("").forEach(character => {
-            if (character.match('[a-zA-Z0-9\!\ \&\.\,\-\~\\\']')) {
+            if (character.match('[a-zA-Z0-9! &.,-~\']')) {
                 messageSize++
             } else {
                 // console.log("'" + character + "'");
                 messageSize += 2.5
             }
         })
-        console.log(messageSize);
+        // console.log(messageSize);
         if (messageSize < 70) {
             return ""
         } else if (messageSize < 190) {

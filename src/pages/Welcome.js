@@ -67,7 +67,7 @@ class Welcome extends Component {
                 <div style={isSet ? { animation } : {}}>
                     <div className='welcome-stage'>
                         <div className='mio-info-panel'>
-                            <span className='score'>SCORE: 999K</span>
+                            <span className='score'>SCORE: 1000K</span>
                             <span className='name'>OOKAMI MIO</span>
                             <GameScreen />
                         </div>
