@@ -62,22 +62,25 @@ class Welcome extends Component {
     renderWelcome = () => {
         const { isReady, isSet } = this.state
         const animation = "hide-welcome-container-animate 1s linear 1"
+        if (isReady && !isSet) {
+            this.handleTransition()
+        }
         return (
             <div className="welcome-container">
                 <div style={isSet ? { animation } : {}}>
                     <div className='welcome-stage'>
                         <div className='mio-info-panel'>
-                            <span className='score'>SCORE: 999K</span>
+                            <span className='score'>SCORE: 1000K</span>
                             <span className='name'>OOKAMI MIO</span>
                             <GameScreen />
                         </div>
                         <LoadingMio />
                         <LoadingBar />
-                        {isReady ?
+                        {/* {isReady ?
                             <div className='welcome-action'>
                                 <Button onClick={this.handleTransition} text="See Messages" icon={Icon.Next} />
                             </div>
-                            : <div />}
+                            : <div />} */}
                     </div>
                     <WelcomeMessage />
                 </div>

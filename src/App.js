@@ -4,7 +4,7 @@ import { NotificationContainer } from 'react-notifications'
 import 'react-notifications/lib/notifications.css'
 import './App.css'
 import Anniversary from './pages/Anniversary'
-import SendMessage from './pages/SendMessage'
+// import SendMessage from './pages/SendMessage'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <HashRouter>
           <Routes>
             <Route path="/" element={<Anniversary />} />
-            <Route path="/send-message" element={<SendMessage />} />
+            {/* <Route path="/send-message" element={<SendMessage />} /> */}
           </Routes>
         </HashRouter >
       </div>

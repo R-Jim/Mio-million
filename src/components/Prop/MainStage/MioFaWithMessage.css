@@ -37,7 +37,7 @@
     width: 250px;
     height: 138px;
     left: -65px;
-    top: -60px;
+    top: -65px;
 }
 
 .message-border {
@@ -56,14 +56,14 @@
     width: 266px;
     height: 141px;
     left: -65px;
-    top: -60px;
+    top: -65px;
 }
 
 .extra-big .message-border {
     width: 266px;
     height: 154px;
     left: -65px;
-    top: -60px;
+    top: -65px;
 }
 
 @keyframes message-container-border-animation {

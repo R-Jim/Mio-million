@@ -5,3 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.layout-container>div{
+    margin: 10px;
+}
