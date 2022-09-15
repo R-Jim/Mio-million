@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.59062023.chunk.css",
-    "main.js": "/static/js/main.ff153735.chunk.js",
-    "main.js.map": "/static/js/main.ff153735.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4e00d8a9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4e00d8a9.js.map",
+    "main.css": "/static/css/main.e37c3e41.chunk.css",
+    "main.js": "/static/js/main.cd1be3ee.chunk.js",
+    "main.js.map": "/static/js/main.cd1be3ee.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.41785fac.js",
+    "runtime-main.js.map": "/static/js/runtime-main.41785fac.js.map",
     "static/css/2.0a0ce284.chunk.css": "/static/css/2.0a0ce284.chunk.css",
-    "static/js/2.eed77d7f.chunk.js": "/static/js/2.eed77d7f.chunk.js",
-    "static/js/2.eed77d7f.chunk.js.map": "/static/js/2.eed77d7f.chunk.js.map",
-    "static/js/3.0785aa5d.chunk.js": "/static/js/3.0785aa5d.chunk.js",
-    "static/js/3.0785aa5d.chunk.js.map": "/static/js/3.0785aa5d.chunk.js.map",
+    "static/js/2.2777d093.chunk.js": "/static/js/2.2777d093.chunk.js",
+    "static/js/2.2777d093.chunk.js.map": "/static/js/2.2777d093.chunk.js.map",
+    "static/js/3.0f22448a.chunk.js": "/static/js/3.0f22448a.chunk.js",
+    "static/js/3.0f22448a.chunk.js.map": "/static/js/3.0f22448a.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.0a0ce284.chunk.css.map": "/static/css/2.0a0ce284.chunk.css.map",
-    "static/css/main.59062023.chunk.css.map": "/static/css/main.59062023.chunk.css.map",
-    "static/js/2.eed77d7f.chunk.js.LICENSE.txt": "/static/js/2.eed77d7f.chunk.js.LICENSE.txt",
+    "static/css/main.e37c3e41.chunk.css.map": "/static/css/main.e37c3e41.chunk.css.map",
+    "static/js/2.2777d093.chunk.js.LICENSE.txt": "/static/js/2.2777d093.chunk.js.LICENSE.txt",
     "static/media/Hairpin-1.0fdf7c05.png": "/static/media/Hairpin-1.0fdf7c05.png",
     "static/media/Hairpin-3.52eb928a.png": "/static/media/Hairpin-3.52eb928a.png",
     "static/media/LoadingMio.css": "/static/media/Mio gaming 5C.06a0b3fa.png",
@@ -22,7 +22,6 @@
     "static/media/MiochunRig-Front.a9c0ca8c.png": "/static/media/MiochunRig-Front.a9c0ca8c.png",
     "static/media/MiochunRig-Front2.a8e19dec.png": "/static/media/MiochunRig-Front2.a8e19dec.png",
     "static/media/MioFa.css": "/static/media/MiochunRig2.ccdde3ab.png",
-    "static/media/Miofa assets.94eed8f8.rar": "/static/media/Miofa assets.94eed8f8.rar",
     "static/media/Button.css": "/static/media/right.c905fed5.png",
     "static/media/notifications.css": "/static/media/notification.c5d9251e.ttf",
     "static/media/BackdropPlayLogo.css": "/static/media/play.a9ac7da1.png",
@@ -31,10 +30,10 @@
     "static/media/Welcome.css": "/static/media/welcome-stand.b5d516dc.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.4e00d8a9.js",
+    "static/js/runtime-main.41785fac.js",
     "static/css/2.0a0ce284.chunk.css",
-    "static/js/2.eed77d7f.chunk.js",
-    "static/css/main.59062023.chunk.css",
-    "static/js/main.ff153735.chunk.js"
+    "static/js/2.2777d093.chunk.js",
+    "static/css/main.e37c3e41.chunk.css",
+    "static/js/main.cd1be3ee.chunk.js"
   ]
 }
